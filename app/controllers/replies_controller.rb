@@ -42,8 +42,7 @@ before_action :find_last_reply, only: [:create]
       @message = Message.find(params[:reply][:message_id])
     end
 
-    def find_last_reply
-      binding.pry
-      @last_reply = @message.replies.last
-    end
+    # def find_last_reply
+    #   @last_reply = @message.replies.last
+    # end
 end

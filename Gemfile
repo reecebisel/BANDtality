@@ -17,6 +17,8 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'gmaps4rails', '1.5.6'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter', '~> 1.2.0'
+
 
 
 group :development, :production do

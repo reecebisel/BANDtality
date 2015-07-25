@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SceneSurvivalKit</title>
+    <title>Bandtality</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
 
@@ -31,7 +31,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Scene Survival Kit</a>
+                    <a class="navbar-brand">Bandtality</a>
                 </div>
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
@@ -39,26 +39,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                         <ul class="dropdown-menu alert-dropdown">
                             <li>
-                                <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">View All</a>
+                                <a href="#">New Messages<span class="label label-warning">Alert Badge</span></a>
                             </li>
                         </ul>
                     </li>
@@ -81,9 +62,9 @@
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
-                        <li>
-                            <%= link_to(" Home", welcome_path, class: "fa fa-fw fa-home") %>
-                        </li>
+<!--                         <li>
+                            <%#= link_to(" Home", welcome_path, class: "fa fa-fw fa-home") %>
+                        </li> -->
                         <li> 
                             <%= link_to(" My Profile", profile_path(id: current_user.profile.id), class: "fa fa-fw fa-user") %>
                         </li>
@@ -96,9 +77,6 @@
                         <li>
                             <%= link_to(" Dating", profiles_path, class: "fa fa-fw fa-heart-o") %>
                         </li>
-<!--                         <li>
-                            <%#= link_to(" Forum", welcome_path, class: "fa fa-fw fa-forumbee") %>
-                        </li> -->
                         <li>
                             <%= link_to("Search", welcome_path, class: "fa fa-fw fa-file")%>
                         </li>

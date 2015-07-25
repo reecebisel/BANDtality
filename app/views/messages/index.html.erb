@@ -6,6 +6,10 @@
     <% @unread.each do |unread| %>
       <li><h4><%= link_to unread.subject, message_path(unread.id) %></h4></li>
       <% end %>
+<!-- 
+    <%# @messages.unread_replies.each do |unread| %>
+      <li><h4><%= link_to unread.subject, message_path(unread.id) %></h4></li>
+      <% end %> -->
   </ul>
   <hr />
   <h3 class= "text-center">Read Messages</h3>
