@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "form col-md-12 center-block" }) do |f| %>
-      <%= devise_error_messages! %>
+        <%= devise_error_messages! %>
           <div class="form-group">  
             <%= f.text_field :full_name, autofocus: true, :class => "form-control input-lg", placeholder: "Full Name" %>
           </div>
