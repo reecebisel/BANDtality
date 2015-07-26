@@ -13,3 +13,11 @@ html, body {
 .modal-content{
 	background-color: "white";
 }
+
+.big {
+	font-size: 3em;
+}
+
+.center {
+	text-align: center;
+}
