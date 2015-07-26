@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center">Login to BANDtality</h1>
+          <h1 class="text-center">BANDtality</h1>
       </div>
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => { :class => "form col-md-12 center-block" }) do |f| %>
@@ -19,6 +19,7 @@
               <%= f.label :remember_me %>
             </div>
           <% end -%>
+          <br/>
           <div class="form-group">
             <%= f.submit "Login", :class => "btn btn-primary btn-lg btn-block" %>
           </div>
