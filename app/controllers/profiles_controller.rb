@@ -16,6 +16,7 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
 	
 	def create
 		@profile = Profile.new(profile_params)
+		@profile.user_id = current_user.id
 		if @profile.save
  			flash[:notice] = "Profile created!"
 			redirect_to choose_profile_path
