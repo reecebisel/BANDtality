@@ -1,4 +1,4 @@
-class VisualArtistsController < ApplicationController
+giclass VisualArtistsController < ApplicationController
 	# before_action :authenticate_user!
 	before_action :find_visual_artist, only: [:edit, :show, :update, :destroy]
 
