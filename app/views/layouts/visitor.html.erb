@@ -131,7 +131,7 @@
                 <% profiles = six_random_profiles %>
                 <% profiles.each do |profile| %>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a class="portfolio-box", id= "random-artists">
                         <%= image_tag profile.image.url(:medium), class: "img-responsive"  %>
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -165,13 +165,43 @@
                     <hr class="primary">
                     <p>Here are the founders and developers of BANDtality.</p>
                 </div>
+                
+                <div class= "col-lg-8 col-lg-offset-2 text-center">
+                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      See Our Devs
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="well text-center">
+                    <!-- insert accordian jquery button that has photos of devs. -->
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <a class="thumbnail text-center">
+                                        <img src="..." alt="Reece Bisel">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <a class="thumbnail text-center">
+                                        <img src="..." alt="Tiffany Forsyth">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <a class="thumbnail text-center">
+                                        <img src="..." alt="Doyi Lee">
+                                    </a>
+                                </div>
+                            </div>
+                            <%= link_to "Our Story", founders_path, class: "btn btn-md", id: "founder-story-button" %>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-github-square fa-3x wow bounceIn"></i>
                     <p><%= link_to "Github", src= "https://github.com/reecebisel/BANDtality" %></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:bandtality@gmail.com">BANDtality@gmail.com</a></p>
                 </div>
             </div>
         </div>
