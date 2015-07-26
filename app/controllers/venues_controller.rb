@@ -4,7 +4,7 @@ class VenuesController < ApplicationController
 before_action :find_venue, only: [:edit, :update, :show, :destroy]
 
   def index
-    @venues = Venue.all 
+    @venues = Venue.all.paginate(:page => params[:page], :per_page => 12) 
   end
 
   def new

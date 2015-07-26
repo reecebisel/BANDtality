@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
 before_action :find_profile, only: [:edit, :update, :show, :destroy]
 
   def index
-		@profiles = Profile.search(params[:search])
+		@search_profiles = Profile.search(params[:search])
+		@profiles = Profile.all.paginate(:page => params[:page], :per_page => 12)
 	end
 	
   def show

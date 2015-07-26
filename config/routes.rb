@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get 'pages/welcome', as: :welcome
   get 'pages/choose_profile', as: :choose_profile
-
+  get 'pages/founders', as: :founders
+  
   devise_for :users, controllers: { registrations: "registrations" }
 
   root 'visitors#index'

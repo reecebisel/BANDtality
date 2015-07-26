@@ -489,3 +489,8 @@ body {
 .orange-font {
     color: #fc7c61;
 }
+
+#founder-story-button {
+  background-color: #10152e;
+    color: #fff; 
+}

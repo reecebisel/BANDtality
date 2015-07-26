@@ -5,7 +5,7 @@ class MusiciansController < ApplicationController
 before_action :find_musician, only: [:edit, :show, :update, :destroy]
 
   def index
-		@musicians = Musician.all
+		@musicians = Musician.all.paginate(:page => params[:page], :per_page => 12)
   end
 
 	def show
