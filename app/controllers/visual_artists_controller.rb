@@ -4,7 +4,7 @@ class VisualArtistsController < ApplicationController
 	before_action :find_visual_artist, only: [:edit, :show, :update, :destroy]
 
   def index
-		@visual_artists = VisualArtist.all
+		@visual_artists = VisualArtist.all.paginate(:page => params[:page], :per_page => 12)
   end
 
 	def show
