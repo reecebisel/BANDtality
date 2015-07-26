@@ -1,8 +1,10 @@
-<h1>Musicians</h1>  
-  <% @musicians.each do |musician| %>
-    <p class="inline-block"><%= image_tag find_parent_profile(musician.profile_id).image.url(:medium) %></br>
-    <%= link_to(find_parent_profile(musician.profile_id).name, musician_path(musician.id), class: "btn btn-warning") %>
-    <%= musician.instrument %>
-    </p>
-  <% end %> 
-  <%= link_to "All", profiles_path, class: "btn btn-warning btn-lg" %>
+<div id="page-wrapper">
+  <h1>Musicians</h1>  
+    <%= link_to "All", profiles_path, class: "btn btn-warning btn-lg", id: "all-profiles-button" %>
+    <% @musicians.each do |musician| %>
+      <p class="inline-block"><%= image_tag find_parent_profile(musician.profile_id).image.url(:medium) %></br>
+      <%= link_to(find_parent_profile(musician.profile_id).name, musician_path(musician.id), class: "btn btn-warning") %>
+      <%= musician.instrument %>
+      </p>
+    <% end %> 
+</div>

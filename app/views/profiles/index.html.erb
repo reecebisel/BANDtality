@@ -13,6 +13,7 @@
           <%= link_to(profile.name, profile_path(profile.id), class: "btn btn-warning btn-md") %></p>
         <% end %> 
   </div>
+  <%= will_paginate @profiles %>
 </div>
 
 <!-- user thumbnail wrapper pintrest style for the user dating -->
@@ -28,4 +29,3 @@
     </div>
   </div>
 </div> -->
->>>>>>> 69c79e9361b0e4b77127412c2c0b895c22d04497
