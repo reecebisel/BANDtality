@@ -18,14 +18,15 @@ class VisualArtistsController < ApplicationController
 	def create
 		@profile = current_user.profile
 		@visual_artist = VisualArtist.new(visual_artist_params)
-		@visual_artist.profile_id = @profile.id
+		@visual_artist.profile_id = @profile.idgit 
 		if @visual_artist.save
-			address = Address.new(zip: params[:visual_artist][:addresses_attributes]['0'][:zip].to_i, 
-									street: params[:visual_artist][:addresses_attributes]['0'][:street],
-									city: params[:visual_artist][:addresses_attributes]['0'][:city],
-									state: params[:visual_artist][:addresses_attributes]['0'][:state],
-									visual_artist_id: @visual_artist.id
-									)
+			address = Address.new
+# (zip: params[:visual_artist][:addresses_attributes]['0'][:zip].to_i, 
+# 									street: params[:visual_artist][:addresses_attributes]['0'][:street],
+# 									city: params[:visual_artist][:addresses_attributes]['0'][:city],
+# 									state: params[:visual_artist][:addresses_attributes]['0'][:state],
+# 									visual_artist_id: @visual_artist.id
+# 									)
 			address.save
 			flash[:notice] = "New visual artist saved!"
 			redirect_to profile_path(current_user.profile.id)

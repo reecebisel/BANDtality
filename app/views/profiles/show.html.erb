@@ -16,9 +16,9 @@
 								<% if @profile.musician.present? %>
 									<%= render 'musicians_partial' %>
 								<% elsif @profile.visual_artist.present? %>
-									<%= render 'visual_artist_partial' %>
-								<% elsif @venue.venue_rep.present? %>
-								  <%= render 'venue_rep_partial' %>
+									<%= render 'visual_artists_partial' %>
+								<% elsif @profile.venue_rep.present? %>
+								  <%= render 'venue_reps_partial' %>
 								<% else %>
 									<%= render 'no_info_partial' %>
 								<% end %>
