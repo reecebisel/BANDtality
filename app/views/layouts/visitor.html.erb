@@ -72,7 +72,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Support for Local Musicans and Artists</h2>
                     <hr>
-                    <p class="text-faded"> Scene Survival Kit is dedicated to connecting local musicians with the venues and artists they need to effectively promote their work.</p>
+                    <p class="text-faded"> BANDtality is dedicated to connecting local musicians with the venues and artists they need to effectively promote their work.</p>
                     <!-- <a href="#" class="btn btn-default btn-xl">Get Started!</a> -->
                 </div>
             </div>
@@ -168,32 +168,33 @@
                 </div>
                 
                 <div class= "col-lg-8 col-lg-offset-2 text-center">
-                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      See Our Devs
-                    </a>
-                    <div class="collapse" id="collapseExample">
-                        <div class="well text-center">
                     <!-- insert accordian jquery button that has photos of devs. -->
                             <div class="row">
                                 <div class="col-sm-8-offset-2 col-md-3">
                                     <a class="thumbnail text-center">
-                                        <img src="..." alt="Reece Bisel">
+                                        <%= image_tag "whatevertheimageis", class: "img-responsive" %>
                                     </a>
                                 </div>
                                 <div class="col-sm-8-offset-2 col-md-3">
                                     <a class="thumbnail text-center">
-                                        <img src="..." alt="Tiffany Forsyth">
+                                        <%= image_tag "whatevertheimageis", class: "img-responsive" %>
                                     </a>
                                 </div>
                                 <div class="col-sm-8-offset-2 col-md-3">
                                     <a class="thumbnail text-center">
-                                        <img src="..." alt="Doyi Lee">
+                                        <%= image_tag "whatevertheimageis", class: "img-responsive" %>
                                     </a>
                                 </div>
                             </div>
-                            <%= link_to "Our Story", founders_path, class: "btn btn-md", id: "founder-story-button" %>
+                            <%#= link_to "Our Story", founders_path, class: "btn btn-md", id: "founder-story-button" %>
+                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Our Story
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="well text-center">
+                            <p>Things that will be here</p>
                         </div>
-                    </div>
+                    </div> <!-- collapseExample -->
                 </div>
 
                 <div class="col-lg-4 col-lg-offset-2 text-center">
