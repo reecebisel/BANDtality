@@ -1,19 +1,19 @@
 class Contact < ApplicationMailer
 
-	default :from => 'contact@devpointlabs.com'
+	default :from => 'bandtality@gmail.com'
   # you can also default subject, body, etc.
 	include SendGrid
 
 	# plain text email
 	def send_contact_info
-		mail :to => "tiffanyforsyth1@gmail.com",
+		mail :to => "bandtality@gmail.com",
 				 :subject => "Test plain text email subject",
 				 :body => 'This is the plain text email body.'
 	end
 
 	# HTML email
 	def send_contact_info_html
-	mail :to => "tiffanyforsyth1@gmail.com",
+	mail :to => "bandtality@gmail.com",
 			 :subject => "Test HTML email subject"
 	end
 
@@ -28,7 +28,7 @@ class Contact < ApplicationMailer
 	def email_with_args_and_instance_vars(first_name, last_name)
 		@first_name = first_name,
 		@last_name = last_name,
-		mail :to => "tiffanyforsyth1@gmail.com",
+		mail :to => "bandtality@gmail.com",
 			 	 :subject => "test HTML email subject"
 	end
 

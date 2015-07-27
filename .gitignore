@@ -19,3 +19,6 @@ Gemfile.lock
 /coverage
 /config/amazon.yml
 /config/mailer.yml
+/config/secrets.yml
+/config/facebook.yml
+/config/twitter.yml
