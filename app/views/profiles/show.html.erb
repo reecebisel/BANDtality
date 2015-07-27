@@ -2,6 +2,7 @@
 	<div id="page-wrapper">
 		<div>
   		<div>
+				
 				<div class="col-md-4">
           <div class="panel" >
          		<div class="panel-body">
@@ -10,15 +11,12 @@
 								<%= image_tag @profile.image.url(:medium) %>
 								<h1><%= @profile.name %></h1>
 								<p> <%= @profile.bio %></p>
+		            <%= link_to("Message #{@profile.name}", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
 							</div>
 						</div> 
           </div>
-						<p id="white_text_button" class="btn btn-primary btn-large">
-					 		<%= link_to "Message", new_message_path(message_receiver_id: @profile.id)%>
-						</p>
       	</div>
-      		
-      		
+
     		<div class="col-md-7" id="content">
           <div class="well text-center"> 
 					  <p>put content here</p>
@@ -27,12 +25,9 @@
 
 			</div>
 		</div>
-
-	
-
   </div>
 </div>
 
                   
                  
-                  
+               
