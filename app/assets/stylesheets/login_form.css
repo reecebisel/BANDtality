@@ -1,0 +1,23 @@
+html, body {
+  overflow: visible;
+}
+
+.login-modal {
+	background-color: #0b0f3b;
+}
+
+.modal-footer {
+	border-top: 0px; 
+}
+
+.modal-content{
+	background-color: "white";
+}
+
+.big {
+	font-size: 3em;
+}
+
+.center {
+	text-align: center;
+}
