@@ -28,7 +28,7 @@ class VisualArtistsController < ApplicationController
 									)
 			address.save
 			flash[:notice] = "New visual artist saved!"
-			redirect_to welcome_path
+			redirect_to profile_path(current_user.profile.id)
 		else
 			flash[:error] = "Something went wrong. Please try again."
 			render :new

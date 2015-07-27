@@ -1,6 +1,24 @@
 <h1> NEW Venue Rep </h1>
 <%= form_for @venue_rep do |f| %>
+<%= f.label :venue_name %>
+<%= f.text_field :venue_name %>
 	<br/>
+    <%= f.fields_for :addresses do |builder| %>
+    <p>
+    <%= builder.label(:street)%><br/>
+    <%= builder.text_field(:street)%>
+    <br/>
+    <%= builder.label(:city)%> <br/>
+    <%= builder.text_field(:city)%>
+    <br/>
+    <%= builder.label(:state)%>
+    <%= builder.text_field(:state)%>
+    <br/>
+    <%= builder.label(:zip)%>
+    <%= builder.text_field(:zip)%>
+    <br/>
+    </p>
+  <% end %>
 	<%= f.submit("Submit")%>
 <%end%>
 

@@ -29,7 +29,7 @@ class MusiciansController < ApplicationController
 									)
 			address.save
 			flash[:notice] = "Musician created!"
-			redirect_to welcome_path
+			redirect_to profile_path(current_user.profile.id)
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :new
