@@ -8,8 +8,10 @@
 					<div id="event_show_background" class="col-md-10">
 					  <h2><%= image_tag @event.image.url(:medium) %></h2>
 						<div class="whitesmoke">
-							<h2><%= @event.event_date %> at <%= @event.start_time %></h2>
-							<p><%= @event.event_desc %></p>
+							<p><b>Date: <%= @event.event_date %><br>
+								 Time: <%= @event.start_time %><br>
+								 Venue: <%= @event.venue %></b><br>
+								 <%= @event.event_desc %></p>
 						</div>
 					</div>
 			</div>

@@ -2,7 +2,7 @@
 	<section class="container">
 	<div id="wrapper">
 
-			<h1 class="silver_text">New Event</h1>
+			<h1 class="silver_text">Edit Event</h1>
 
 			<%= form_for @event, html: {multipart: true} do |f| %>
 				<h4 class="silver_text">Image:</h4>
@@ -16,6 +16,9 @@
 				<br/>
 				<h4 class="silver_text">Time:</h4>
 				<p class="grey_text"><%= f.text_field(:start_time)%></p>
+				</br>
+				<h4 class="silver_text">Venue:</h4>
+				<p class="grey_text"><%= f.text_field(:venue)%></p>
 				</br>
 				<h4 class="silver_text">Description:</h4>
 				<p class="grey_text"><%= f.text_area(:event_desc)%></p>
