@@ -17,10 +17,16 @@
 						</div> 
           </div>
       	</div>
-        <!-- I don't think that this needs to be in here -->
     		<div class="col-md-7" id="content">
-          <div class="well text-center"> 
-					  <p>put content here</p>
+          <div class= "profile-content" id="playlists"> 
+            <!-- div appending playlists into -->
+					  <% @playlists.each do |list| %>
+              <%= render partial: 'playlists/iframe', locals: { playlist: list } %>
+            <% end %>
+          </div>
+          <div class= "profile-content" id="albums"> 
+            <!-- div appening photo albums -->
+            
           </div>
 				</div>
         <!-- the end of the thing -->
@@ -40,7 +46,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+     <!--    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Add Content</h4>
       </div>
       <div class="modal-body">
@@ -48,15 +55,15 @@
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Playlist</a></li>
             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Albums</a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Photos</a></li>
+<!--             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Photos</a></li> -->
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
-              <form action="/playlists" method:'POST' id="new_playlist_form" class= "input-lg">
+              <form id="new_playlist_form" class= "input-lg">
                 <h4>Playlist Url</h4>
-                <input type="text" name="playlist_url" required="true" />
+                <input type="text" name="playlist_url", id="playlist_url" required="true" />
                 <br>
                 <button type="button" id="new_playlist_button" class= "btn btn-primary">Save Playlist</button>
               </form>
@@ -69,61 +76,17 @@
                 <button type="button" id="new_album_button" class= "btn btn-primary">Save Album</button>
               </form>
             </div>
-            <div role="tabpanel" class="tab-pane" id="messages">
-              <form action="/photos" method:'POST' id="new_photo_form" class= "input-lg">
-                <h4>Caption</h4>
-                <input type="text" name="caption" required="true" />
-                <br>
-                <input type="text" name="image" required="true" />
-                <br>
-                <button type="button" id="new_photo_button" class= "btn btn-primary">Save photo</button>
-              </form>
-            </div>
           </div>
         <div>
-
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>       
 <!-- playlists end  -->
 
-
-          <!-- Photo Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
-  Add a Photo Album
-</button> -->
-
-<!-- Photo Modal -->
-<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add an Album for your photos</h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- photo thumbnail loop, remeber to do seperate modal for the photos. --> 
-<!-- <div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="..." alt="...">
-    </a>
-  </div>
-  Photo stuff
-</div>   -->    
 <!-- photo end -->
 
