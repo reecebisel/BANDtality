@@ -18,7 +18,7 @@ module CalendarHelper
 
     def header
       content_tag :tr, class: "month_header row_fluid" do
-        HEADER.map { |day| content_tag :th, class: "span1" do
+        HEADER.map { |day| content_tag :th, id: "spacer", class: "span1" do
         day
         end }.join.html_safe
       end
