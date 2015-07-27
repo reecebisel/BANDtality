@@ -29,7 +29,7 @@ class VenueRepsController < ApplicationController
 									)
 			address.save
 			flash[:notice] = "Venue Representative Created!"
-			redirect_to welcome_path
+			redirect_to profile_path(current_user.profile.id)
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :new
@@ -61,7 +61,7 @@ private
 	end
 
 	def venue_rep_params
-		params.require(:venue_rep).permit(:profile_id, addresses_attributes: [:id, :street, :city, :state, :zip, :venue_rep_id, :latitude, :longitude])
+		params.require(:venue_rep).permit(:venue_name, :profile_id, addresses_attributes: [:id, :street, :city, :state, :zip, :venue_rep_id, :latitude, :longitude])
 	end
 
 end

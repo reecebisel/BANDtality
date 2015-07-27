@@ -19,7 +19,8 @@ class ProfilesController < ApplicationController
 		@user = current_user
 		@profile = Profile.new(profile_params)
 		@profile.user_id = @user.id
-		if @profile.save
+
+		if @profile.save && @profile.image.present?
  			flash[:notice] = "Profile created!"
 			redirect_to choose_profile_path
 		else
@@ -34,7 +35,7 @@ class ProfilesController < ApplicationController
 	def update
 		if @profile.update(profile_params)
 			flash[:notice] = "Profile updated!"
-			redirect_to profiles_path
+			redirect_to profile_path(@profile.id)
 		else
 			flash[:alert] = "Something went wrong. Please try again."
 			render :edit
