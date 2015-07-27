@@ -3,12 +3,6 @@
   padding: 20px;
 }
 
-.events_background {
-  background-image: image-url('blue_lights.jpg');
-  repeat: no-repeat;
-  background-size: 100%;
-}
-
 .nav_tags {
   padding: 10px;
 }
@@ -77,6 +71,10 @@ font-family: 'Gloria Hallelujah', cursive;
 
 .black_text {
   color: black;
+}
+
+#white_text_button {
+  color: white;
 }
 
 #calendar_img {
