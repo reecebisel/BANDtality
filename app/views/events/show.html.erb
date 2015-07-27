@@ -8,10 +8,13 @@
 					<div id="event_show_background" class="col-md-10">
 					  <h2><%= image_tag @event.image.url(:medium) %></h2>
 						<div class="whitesmoke">
-							<p><b>Date: <%= @event.event_date %><br>
-								 Time: <%= @event.start_time %><br>
-								 Venue: <%= @event.venue %></b><br>
-								 <%= @event.event_desc %></p>
+							<p><b>Date:</b> <%= @event.event_date %><br>
+								 <b>Time:</b> <%= @event.start_time %><br>
+								 <b>Venue:</b> <%= @event.event_venue %><br>
+								 <b>Address:</b> <%= @event.event_address %><br>
+								 <b>Tickets:</b> <%= @event.tickets %><br>
+								 <hr></p>
+								 <p class="bigger_font"><%= @event.event_desc %></p>
 						</div>
 					</div>
 			</div>

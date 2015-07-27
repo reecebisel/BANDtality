@@ -18,7 +18,7 @@ class VisualArtistsController < ApplicationController
 	def create
 		@profile = current_user.profile
 		@visual_artist = VisualArtist.new(visual_artist_params)
-		@visual_artist.profile_id = @profile.idgit 
+		@visual_artist.profile_id = @profile.id
 		if @visual_artist.save
 			address = Address.new
 # (zip: params[:visual_artist][:addresses_attributes]['0'][:zip].to_i, 
