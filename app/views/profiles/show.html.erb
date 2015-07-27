@@ -17,6 +17,10 @@
 									<%= render 'musicians_partial' %>
 								<% elsif @profile.visual_artist.present? %>
 									<%= render 'visual_artist_partial' %>
+								<% elsif @venue.venue_rep.present? %>
+								  <%= render 'venue_rep_partial' %>
+								<% else %>
+									<%= render 'no_info_partial' %>
 								<% end %>
 
 		            <%= link_to("Message #{@profile.name}", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
