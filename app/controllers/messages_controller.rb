@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
-before_action :find_message, only: [:show, :destroy]
-# before_action :find_last_reply, only: [:index]
+
+  layout 'logged_in'
+  before_action :find_message, only: [:show, :destroy]
+  # before_action :find_last_reply, only: [:index]
   
   def index
     profile_id = current_user.profile.id
