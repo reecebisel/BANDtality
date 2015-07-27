@@ -27,9 +27,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.message_sender_id = current_user.profile.id
-    binding.pry
     if @message.save
-      binding.pry
       flash[:success]= "Message sent!"
       redirect_to messages_path
     else
