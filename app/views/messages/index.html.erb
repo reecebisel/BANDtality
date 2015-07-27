@@ -9,21 +9,21 @@
     <!-- Nav Tab-->
     <ul class="nav nav-tabs nav-justified" role="tablist">
       <li role="presentation" class="active"> 
-        <a href="messages_path" aria-controls="inbox" data-toggle="tab" role="tab">Inbox
+        <a href="#inbox" aria-controls="inbox" data-toggle="tab" role="tab">Inbox
         </a>
       </li>
       <li role="presentation">
-        <a href="" aria-controls="sent" data-toggle="tab" role="tab">
+        <a href="#sent" aria-controls="sent" data-toggle="tab" role="tab">
           Sent
         </a>
       </li>
       <li role="presentation">
-        <a href="new_message_path" aria-controls="unread" data-toggle="tab" role="tab">
+        <a href="#unread" aria-controls="unread" data-toggle="tab" role="tab">
           unread
         </a>
       </li>
       <li role="presentation">
-        <a href="new_message_path" aria-controls="read" data-toggle="tab" role="tab">
+        <a href="#read" aria-controls="read" data-toggle="tab" role="tab">
           read
         </a>
       </li>
@@ -40,9 +40,7 @@
                <th>Date</th>
                <th>Action</th>
             </tr>
-            <% if @messages.empty? %>
-              You have no messages.
-            <% end%>
+
             <% @messages.each do |message| %>
               <tr>
                 <td><%= message.message_sender_id %></td>
@@ -58,6 +56,9 @@
             <%end%>
           </tbody>
         </table>
+        <% if @messages.empty? %>
+          You have no messages.
+        <% end%>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="sent">
@@ -70,10 +71,6 @@
                <th>Action</th>
             </tr>
 
-            <% if @sent_messages.empty? %>
-              You not yet sent any messages.
-            <% end%>
-
             <% @sent_messages.each do |sent| %>
               <tr>
                 <td><%= sent.message_receiver_id %></td>
@@ -82,13 +79,16 @@
                 <td>
                   <div class="btn-group">
                     <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger" href="#"><i class="fa fa-user"></i></a>
                   </div>
                 </td>
               </tr>
             <%end%>
           </tbody>
         </table>
+        <% if @sent_messages.empty? %>
+          You have not yet sent any messages.
+        <% end%>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="unread">
@@ -100,10 +100,6 @@
                <th>Date</th>
                <th>Action</th>
             </tr>
-
-            <% if @unread.empty? %>
-              You have no messages to see.
-            <% end%>
 
             <% @unread.each do |unread| %>
               <tr>
@@ -120,6 +116,9 @@
             <%end%>
           </tbody>
         </table>
+      <% if @unread.empty? %>
+          You have no unread messages.
+        <% end%>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="read">
@@ -131,10 +130,6 @@
                <th>Date</th>
                <th>Action</th>
             </tr>
-
-            <% if @read.empty? %>
-              You have no messages to see.
-            <% end%>
 
             <% @read.each do |read| %>
               <tr>
@@ -151,6 +146,9 @@
             <%end%>
           </tbody>
         </table>
+        <% if @read.empty? %>
+          You have no messages to see.
+        <% end%>
       </div>
     </div>
   </div>
