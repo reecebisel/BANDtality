@@ -2,20 +2,28 @@
 	<div id="page-wrapper">
 		<div>
   		<div>
+				
 				<div class="col-md-4">
-          <div class="panel" >
+          <div class="panel box">
          		<div class="panel-body">
               <div>
-            		<img class="img-responsive"
+            		<div class="img-responsive">
 								<%= image_tag @profile.image.url(:medium) %>
+								</div>
 								<h1><%= @profile.name %></h1>
 								<p> <%= @profile.bio %></p>
+
+								<% if @profile.musician.present? %>
+									<%= render 'musicians_partial' %>
+								<% elsif @profile.visual_artist.present? %>
+									<%= render 'visual_artist_partial' %>
+								<% end %>
+
+		            <%= link_to("Message #{@profile.name}", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+
 							</div>
 						</div> 
           </div>
-						<p class="btn btn-primary btn-large">
-					 		<%= link_to "Message", new_message_path(message_receiver_id: @profile.id)%>
-						</p>
       	</div>
 
     		<div class="col-md-7" id="content">
@@ -27,5 +35,7 @@
 			</div>
 		</div>
   </div>
-</div>              
+</div>
+
                   
+                 
