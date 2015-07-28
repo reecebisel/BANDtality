@@ -11,7 +11,7 @@
 
     <link href="/assets/logged_in.css" rel="stylesheet">
       <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="/assets/animate.min.css" type="text/css">
@@ -62,19 +62,19 @@
                             <%#= link_to(" Home", welcome_path, class: "fa fa-fw fa-home") %>
                         </li> -->
                         <li> 
-                            <%= link_to(" My Profile", profile_path(id: current_user.profile.id), class: "fa fa-fw fa-user") %>
+                            <a href="<%=profile_path(id: current_user.profile.id)%>" class="text-center"><i class="fa fa-user"></i> My Profile</a>
                         </li>
-                        <li>    
-                            <%= link_to(" Messages", messages_path, class: "fa fa-fw fa-envelope-o") %>
-                        </li>
-                        <li>
-                            <%= link_to(" Events", events_path, class: "fa fa-fw fa-bullhorn") %>
+                        <li>  
+                            <a href="<%=messages_path%>" class="text-center"><i class="fa fa-envelope"></i> Messages</a>
                         </li>
                         <li>
-                            <%= link_to(" Dating", profiles_path, class: "fa fa-fw fa-heart-o") %>
+                            <a href="<%=events_path%>" class="text-center"><i class="fa fa-bullhorn"></i> Events</a>
                         </li>
                         <li>
-                            <%= link_to(" Search", welcome_path, class: "fa fa-fw fa-search")%>
+                            <a href="<%=profiles_path%>" class="text-center"><i class="fa fa-heart-o"></i> Dating</a>
+                        </li>
+                        <li>
+                           <a href="<%=welcome_path%>" class="text-center"><i class="fa fa-search"></i> Search</a>
                         </li>
                     </ul>
                 </div>

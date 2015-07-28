@@ -19,7 +19,7 @@ gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter', '~> 1.2.0'
 gem 'will_paginate', '~> 3.0.6'
-
+gem "ckeditor"
 
 
 group :development, :production do

@@ -1,7 +1,8 @@
 class RepliesController < ApplicationController
-before_action :find_reply, only: [:destroy]
-before_action :find_message, only: [:create, :find_last_reply]
-before_action :find_last_reply, only: [:create]
+    layout 'logged_in'
+    before_action :find_reply, only: [:destroy]
+    before_action :find_message, only: [:create, :find_last_reply]
+    before_action :find_last_reply, only: [:create]
   def new 
     @reply = Reply.new
   end

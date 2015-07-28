@@ -4,6 +4,10 @@ module ApplicationHelper
     Profile.find(profile_id)
   end
 
+  def name_parent_profile(profile_id)
+    Profile.find(profile_id).name
+  end
+
   def six_random_profiles
     Profile.all.sample(6)
   end

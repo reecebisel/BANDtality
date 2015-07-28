@@ -6,10 +6,11 @@ class MessagesController < ApplicationController
   
   def index
     profile_id = current_user.profile.id
-    @messages = Message.my_messages(profile_id)
-    @unread = @messages.where(reply_read: false)
-    @read = @messages.where(reply_read: true)
-    @sent_messages = Message.sent_messages(profile_id)
+    @messages = Message.my_messages(profile_id).order("created_at DESC")
+    @unread = @messages.where(reply_read: false).order("created_at DESC")
+    @read = @messages.where(reply_read: true).order("created_at DESC")
+    @sent_messages = Message.sent_messages(profile_id).order("created_at DESC")
+    @replies = Message.replies(profile_id)
     # raise "the roof"
   end
 
@@ -27,9 +28,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.message_sender_id = current_user.profile.id
-    binding.pry
     if @message.save
-      binding.pry
       flash[:success]= "Message sent!"
       redirect_to messages_path
     else
