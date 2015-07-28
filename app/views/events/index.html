@@ -2,17 +2,17 @@
 
 <section id="uber_background">
   <div class="wrapper">
-    <h1 class="text-center permanent_marker"><b>Events</b></h1>	
-    <h3 class="text-center grey_text">Click on an event title to see more information.</h3>
+    <h1 class="text-center permanent_marker black_text"><b>Events</b></h1>	
+    <h3 class="text-center black_text">Click on an event title to see more information.</h3>
   <!-- CALENDAR START -->
-    <div id="calendar_background">
-      <h2 class="text-center gray_text">
+    <div>
+      <h2 class="text-center black_text">
         <%= link_to "<", date: @date.prev_month %>
         <%= @date.strftime("%B %Y") %>
         <%= link_to ">", date: @date.next_month %>
       </h2>
     <!-- this calls the calendar helper (helpers/calendar_helper.rb) -->
-      <div class="col-md-offset-1">
+      <div class="col-md-offset-1 grey_background">
         <%= calendar @date do |date| %>
           <%= date.day %>
           <% if @events_by_date[date] %>
