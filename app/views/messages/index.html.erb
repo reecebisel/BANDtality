@@ -48,8 +48,8 @@
                 <td><%= message.created_at %></td>
                 <td>
                   <div class="btn-group">
-                    <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger"> <% link_to(message_path(message.id), method: :delete) %><span class ="fa fa-trash"></span></a>
+                    <div class= "btn btn-success"><%= link_to("", new_reply_path(message_id: message.id), class: "fa fa-mail-reply")%></div>
+                    <a class="btn btn-danger"> <% link_to message_path(message.id), method: :delete %><span class ="fa fa-trash"></span></a>
                   </div>
                 </td>
               </tr>
@@ -78,8 +78,8 @@
                 <td><%= sent.created_at %></td>
                 <td>
                   <div class="btn-group">
-                    <a class="btn btn-success" href=""><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger"> <% link_to(message_path(sent.id), method: :delete) %><span class ="fa fa-trash"></span></a>
+                    <div class= "btn btn-success"><%= link_to("", new_reply_path(message_id: sent.id), class: "fa fa-mail-reply")%></div>
+                    <div class="btn btn-danger"> <% link_to(message_path(sent.id), method: :delete) %><span class ="fa fa-trash"></span></div>
                   </div>
                 </td>
               </tr>
@@ -108,8 +108,8 @@
                 <td><%= unread.created_at %></td>
                 <td>
                   <div class="btn-group">
-                    <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger"> <% link_to(message_path(unread.id), method: :delete) %><span class ="fa fa-trash"></span></a>
+                    <div class= "btn btn-success"><%= link_to("", new_reply_path(message_id: unread.id), class: "fa fa-mail-reply")%></div>
+                    <div class="btn btn-danger"> <% link_to message_path(unread.id), method: :delete %><span class ="fa fa-trash"></span></div>
                   </div>
                 </td>
               </tr>
@@ -138,7 +138,7 @@
                 <td><%= read.created_at %></td>
                 <td>
                   <div class="btn-group">
-                    <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
+                    <div class= "btn btn-success"><%= link_to("", new_reply_path(message_id: read.id), class: "fa fa-mail-reply")%></div>
                     <a class="btn btn-danger"> <% link_to(message_path(read.id), method: :delete) %><span class ="fa fa-trash"></span></a>
                   </div>
                 </td>
