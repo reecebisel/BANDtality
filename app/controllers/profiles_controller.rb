@@ -9,7 +9,9 @@ class ProfilesController < ApplicationController
 	end
 	
   def show
+  	# raise "the roof"
   	@playlists = current_user.profile.playlists
+  	@albums = current_user.profile.albums
   end
 
   def new

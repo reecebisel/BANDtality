@@ -10,10 +10,12 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
   end
 
   def create
-    @photo = Photo.create(photo_params)
+    @photo = Photo.new(photo_params)
+    @photo.album_id = params[:photo][:album_id]
+    @photo.profile_id = current_user.profile.id
     if @photo.save
       flash[:success]= "Photo created!"
-      redirect_to profile_path(@photo.profile_id)
+      redirect_to album_path(@photo.album_id)
     else
       flash[:error]= "Photo failed to create!"
       render :new
@@ -50,6 +52,6 @@ before_action :find_profile, only: [:edit, :update, :show, :destroy]
   end
 
   def photo_params
-    params.require(:photo).permit(:caption, :image, :profile_id)
+    params.require(:photo).permit(:caption, :image, :profile_id, :album_id)
   end
 end
