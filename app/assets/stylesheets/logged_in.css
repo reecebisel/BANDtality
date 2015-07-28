@@ -44,6 +44,7 @@
 /* Top Navigation */
 .dark-nav{
     background-color: #0C1023;
+    border-bottom: solid 1px #999;
 }
 .top-nav {
     padding: 0 15px;
