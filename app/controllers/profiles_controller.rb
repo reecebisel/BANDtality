@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
 	end
 	
   def show
+  	@playlists = current_user.profile.playlists
   end
 
   def new

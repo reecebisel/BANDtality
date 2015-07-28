@@ -12,10 +12,11 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = Playlist.create(playlist_params)
+    @playlist = Playlist.new(playlist_params)
+    @playlist.profile_id = current_user.profile.id
     if @playlist.save
       flash[:success]= "Playlist created!"
-      redirect_to root_path #user_path(@playlist.user_id)
+      redirect_to profile_path(current_user.profile.id)
     else
       flash[:error]= "Playlist failed to create."
       render :new

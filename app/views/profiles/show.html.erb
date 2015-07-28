@@ -23,23 +23,84 @@
 									<%= render 'no_info_partial' %>
 								<% end %>
 
-		            <%= link_to("Message #{@profile.name}", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
-
+		            <%= link_to("Message", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Content</button>
 							</div>
 						</div> 
           </div>
       	</div>
-
     		<div class="col-md-7" id="content">
-          <div class="well text-center"> 
-					  <p>put content here</p>
+          <div class= "profile-content" id="playlists"> 
+            <!-- div appending playlists into -->
+					  <% @playlists.each do |list| %>
+              <%= render partial: 'playlists/iframe', locals: { playlist: list } %>
+            <% end %>
+          </div>
+          <div class= "profile-content" id="albums"> 
+            <!-- div appening photo albums -->
+            
           </div>
 				</div>
-
+        <!-- the end of the thing -->
 			</div>
 		</div>
   </div>
 </div>
 
-                  
-                 
+
+      <!-- form thing for the playlist -->
+          <!-- Playlist Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+  Add Content
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+     <!--    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add Content</h4>
+      </div>
+      <div class="modal-body">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Playlist</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Albums</a></li>
+<!--             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Photos</a></li> -->
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <form id="new_playlist_form" class= "input-lg">
+                <h4>Playlist Url</h4>
+                <input type="text" name="playlist_url", id="playlist_url" required="true" />
+                <br>
+                <button type="button" id="new_playlist_button" class= "btn btn-primary">Save Playlist</button>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+              <form action="/albums" method:'POST' id="new_album_form" class= "input-lg">
+                <h4>Album Name</h4>
+                <input type="text" name="album_name" required="true" />
+                <br>
+                <button type="button" id="new_album_button" class= "btn btn-primary">Save Album</button>
+              </form>
+            </div>
+          </div>
+        <div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>       
+<!-- playlists end  -->
+
+<!-- photo end -->
+
+
