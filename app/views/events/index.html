@@ -1,4 +1,4 @@
-<link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt|Droid+Sans+Mono|Shadows+Into+Light|Architects+Daughter|Gloria+Hallelujah|Amatic+SC|Roboto|Cabin|Abel|Anton|Wire+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 
 <section id="uber_background">
   <div class="wrapper">
@@ -12,7 +12,9 @@
         <%= link_to ">", date: @date.next_month %>
       </h2>
     <!-- this calls the calendar helper (helpers/calendar_helper.rb) -->
-      <div class="col-md-offset-1 grey_background">
+      
+      <div class="col-md-offset-1">
+        <div class="grey_background">
         <%= calendar @date do |date| %>
           <%= date.day %>
           <% if @events_by_date[date] %>
@@ -24,6 +26,7 @@
           <% end %>
         <% end %>
         </div>
+      </div>
  <div class="row">
       <a class="nav_tags"><%= link_to("Add an event", new_event_path) %></a>
     </div>

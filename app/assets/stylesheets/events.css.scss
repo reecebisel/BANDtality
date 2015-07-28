@@ -1,5 +1,5 @@
 #uber_background {
-  background-image: image-url('concert5.jpg');
+  background-image: image-url('concert5_2.jpg');
   repeat: no-repeat;
   background-size: 100%;
   padding: 20px;
@@ -10,12 +10,9 @@
     -o-background-size: cover;
 }
 
-.grey_background {
-background-color: grey;
-}
 
 .bigger_font {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .nav_tags {
@@ -50,6 +47,11 @@ font-family: 'Wire One', sans-serif;
   color: black;
 }
 
+.black_text_header {
+  color: black;
+ 
+}
+
 .white_text {
   color: whitesmoke;
 }
@@ -77,16 +79,17 @@ font-family: 'Wire One', sans-serif;
 }
 
 .calendar_grid {
-  border: 3px solid gray;
+  border: 2px solid #10152e;
   margin-bottom: 30px;
   margin-right: 30px;
   margin-left: -30px;
   .month_header {
-    background-color: silver;   /*! table header */
+    background-color: #10152e;   /*! table header */
     .span1 {
       padding-top: 5px;
       font-weight: bold;
       text-align: center;
+      color: silver;
     }
   }
   .notmonth {
