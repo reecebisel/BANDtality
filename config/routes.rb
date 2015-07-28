@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   
 
+  mount Ckeditor::Engine => '/ckeditor'
   get 'pages/welcome', as: :welcome
   get 'pages/choose_profile', as: :choose_profile
   get 'pages/founders', as: :founders
