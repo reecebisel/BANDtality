@@ -22,9 +22,13 @@
 								<% else %>
 									<%= render 'no_info_partial' %>
 								<% end %>
-
-		            <%= link_to("Message", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+                
+                <% if current_user.profile.id != @profile.id %>
+                <%= link_to("Message", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+                <% end %>
+                <% if current_user.profile.id == @profile.id %>
                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Content</button>
+                <% end %>
 							</div>
 						</div> 
           </div>
@@ -34,7 +38,14 @@
               <hr />
               <% @albums.each do |album| %>
                 <li>
-                  <h4><%= link_to album.album_name, album_path(album.id) %></h4>
+                  <div class= "row">
+                    <h4>
+                      <%= link_to album.album_name, album_path(album.id) %>
+                      <% if current_user.profile.id == @profile.id %>
+                        <p id="album_delete"><%= link_to 'Delete', album_path(album.id), method: :destroy, class: "pull-right" %></p>
+                      <% end %>
+                    </h4>
+                  </div>
                 </li>
               <% end %>
             </ul>
@@ -45,7 +56,11 @@
             <!-- div appending playlists into -->
 					  <% @playlists.each do |list| %>
               <%= render partial: 'playlists/iframe', locals: { playlist: list } %>
-              <%= link_to playlist_path, method: :destroy, class: "btn btn-warning" %>
+              <% if current_user.profile.id == list.profile_id %>
+                <%= link_to "Delete", playlist_path(list.id), method: :destroy, class: "btn btn-danger btn-sm pull-right" %>
+                <%= link_to "Edit", edit_playlist_path(list.id), class: "btn btn-warning btn-sm pull-right" %>
+                <div class="spacer"></div>
+              <% end %>
             <% end %>
           </div>
 				</div>
@@ -103,7 +118,10 @@
               <hr id="instruction_hr">
               <div class="playlist_instructions">
                 <h3>Adding a photo album</h3>
-                <p>Steps on adding a photo album</p>
+                <ol>
+                  <li>Name you new photo album.</li>
+                  <li>Click the <strong>Save Album</strong> button</li>
+                </ol>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="messages">
@@ -123,8 +141,8 @@
               </form>
             </div>
           </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-footer" id="content-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
