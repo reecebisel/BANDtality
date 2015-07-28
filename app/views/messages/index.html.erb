@@ -49,7 +49,7 @@
                 <td>
                   <div class="btn-group">
                     <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger" href="<%message_path(message.id), method: :delete%>"><i class="fa fa-trash"></i></a>
                   </div>
                 </td>
               </tr>
@@ -78,8 +78,8 @@
                 <td><%= sent.created_at %></td>
                 <td>
                   <div class="btn-group">
-                    <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger" href="#"><i class="fa fa-user"></i></a>
+                    <a class="btn btn-success" href=""><i class="fa fa-mail-reply"></i></a>
+                    <a class="btn btn-danger" href="<% message_path(sent.id), method: :delete %>"><i class="fa fa-user"></i></a>
                   </div>
                 </td>
               </tr>
@@ -109,7 +109,7 @@
                 <td>
                   <div class="btn-group">
                     <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger" href="<% message_path(unread.id), method: :delete%>"><i class="fa fa-trash"></i></a>
                   </div>
                 </td>
               </tr>
@@ -139,7 +139,7 @@
                 <td>
                   <div class="btn-group">
                     <a class="btn btn-success" href="#"><i class="fa fa-mail-reply"></i></a>
-                    <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger" href="<%message_path(read.id), method: :delete%>"><i class="fa fa-trash"></i></a>
                   </div>
                 </td>
               </tr>
