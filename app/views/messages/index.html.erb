@@ -43,7 +43,7 @@
 
             <% @messages.each do |message| %>
               <tr>
-                <td><%= message.message_sender_id %></td>
+                <td><%= name_parent_profile(message.message_sender_id) %></td>
                 <td><%= link_to message.subject, message_path(message.id)%></td>
                 <td><%= message.created_at %></td>
                 <td>
@@ -73,7 +73,7 @@
 
             <% @sent_messages.each do |sent| %>
               <tr>
-                <td><%= sent.message_receiver_id %></td>
+                <td><%= name_parent_profile(sent.message_receiver_id)%></td>
                 <td><%= link_to sent.subject, message_path(sent.id) %></td>
                 <td><%= sent.created_at %></td>
                 <td>
@@ -103,7 +103,7 @@
 
             <% @unread.each do |unread| %>
               <tr>
-                <td><%= unread.message_sender_id %></td>
+                <td><%= name_parent_profile(unread.message_sender_id) %></td>
                 <td><%= link_to unread.subject, message_path(unread.id) %></td>
                 <td><%= unread.created_at %></td>
                 <td>
@@ -133,7 +133,7 @@
 
             <% @read.each do |read| %>
               <tr>
-                <td><%= read.message_sender_id %></td>
+                <td><%= name_parent_profile(read.message_sender_id)%></td>
                 <td><%= link_to read.subject, message_path(read.id) %></td>
                 <td><%= read.created_at %></td>
                 <td>
