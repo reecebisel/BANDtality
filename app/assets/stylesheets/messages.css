@@ -15,6 +15,7 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-size:14px !important;    
+
 }
 h1,h2,h3,h4,h5{
     font-weight: 300;
@@ -518,12 +519,6 @@ ul.sidebar-menu li.active a i {
 }
 .panel-content{
     padding: 10px;
-}
-.wrapper {
-    display: inline-block;
-    margin-top: 60px;
-    padding: 15px;
-    width: 100%;
 }
 
 a.logo {
@@ -1068,6 +1063,7 @@ div[data-role="editor-toolbar"] {
   -moz-box-shadow: none;
   box-shadow: none;
   margin-bottom: 30px;
+  padding: 0px;
 }
 .panel .panel-heading {
   line-height: 34px;
@@ -1152,6 +1148,7 @@ div[data-role="editor-toolbar"] {
   border-right-color: #ccc!important;
   border-bottom-color: #ccc!important;
   border-left-color: #ccc!important;
+  background-color: #fff;
 }
 .panel .panel-body-map {
   border-width: 1px 1px 2px;

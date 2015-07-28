@@ -8,8 +8,6 @@
 
 .body {
     margin-top: 100px;
-    background-color: #fff;
-    font-family: 'Lato', sans-serif;
 }
 
 @media(min-width:768px) {
@@ -20,12 +18,12 @@
 
 .wrapper {
     padding-left: 0;
+    margin-top: 60px;
 }
 
 .page-wrapper {
     width: 100%;
     padding: 0;
-    background-color: #fff;
 }
 
 .huge {
