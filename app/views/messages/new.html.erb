@@ -10,9 +10,7 @@
               <form class="form-horizontal">
 
 								<%= form_for @message do |f| %>
-									<% if :message_receiver_id?%>
-										<h4>To: <%= name_parent_profile(params[:message_receiver_id])%></h4>
-									<%end%>
+									<h4>To: <%= name_parent_profile(params[:message_receiver_id])%></h4>
 								  <h4><%= f.text_field :subject, class: "form-control",  placeholder: "Subject" %></h4>
 								  <h4><%= f.cktext_area :message_body, class: "input-lg text-center"%></h4>
 								  <%= f.hidden_field :message_receiver_id, value: params[:message_receiver_id] %>
