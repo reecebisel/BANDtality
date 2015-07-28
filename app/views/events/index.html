@@ -1,12 +1,12 @@
-<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,700' rel='stylesheet' type='text/css'>
 
 <section id="uber_background">
   <div class="wrapper">
-    <h1 class="text-center black_text"><b>Events</b></h1>	
-    <h4 class="text-center black_text">Click on an event title to see more information.</h4>
+    <h1 class="text-center fjalla_font black_text"><b>Events</b></h1>	
+    <h4 class="text-center cantarell_font black_text">Click on an event title to see more information.</h4>
   <!-- CALENDAR START -->
     <div>
-      <h2 class="text-center black_text">
+      <h2 class="text-center fjalla_font black_text">
         <%= link_to "<", date: @date.prev_month %>
         <%= @date.strftime("%B %Y") %>
         <%= link_to ">", date: @date.next_month %>
@@ -14,7 +14,7 @@
     <!-- this calls the calendar helper (helpers/calendar_helper.rb) -->
       
       <div class="col-md-offset-1">
-        <div class="grey_background">
+        <div class="grey_background cantarell_font">
         <%= calendar @date do |date| %>
           <%= date.day %>
           <% if @events_by_date[date] %>
