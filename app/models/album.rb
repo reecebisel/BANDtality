@@ -1,5 +1,5 @@
 class Album < ActiveRecord::Base
-  has_many :photos
+  has_many :photos, dependent: :destroy
   belongs_to :profile
   belongs_to :visual_artist
   belongs_to :musician 

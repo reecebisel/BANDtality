@@ -1,0 +1,9 @@
+<%= form_for @photo do |f| %>
+<br>
+<%= f.label(:caption) %>
+<%= f.text_field(:caption) %>
+<br>
+<%= f.file_field(:image) %>
+<%= f.hidden_field :album_id, value: params[:id] %>
+<%= f.submit %>
+<% end %>

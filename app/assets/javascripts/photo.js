@@ -1,26 +1,21 @@
 $(document).ready(function(){
-
-$('#new_playlist_button').click(function(){
-
-    var $newPhotoForm = $('#new_photo_form');
-    var $caption = $('#caption');
-    var $image = 
-    var $playlistDiv = $('#playlists'); //<-- need to set up html markup so I know what to call this
+  $('#new_album_button').click(function(){
+    var $newAlbumForm = $('#new_album_form');
+    var $albumName = $('#album_name');
+    var $albumsList = $('#albums_list');
     $.ajax({
       type: 'POST',
-      url: "/photos",
-      data: { "photo[caption]": $playlistUrl.val(),
-              "photo[image]": 
+      url: "/albums",
+      data: { "album[album_name]": $albumName.val()
     },
       success:function(data){
-        window.location.reload()
+        window.location.reload();
       },
       error:function(data){
-        alert('Something went wrong while adding your playlist. Please try again.')
+        alert('Something went wrong while adding your photo album. Please try again.')
         window.location.reload()
       }
     });
   });
 }); // document end
 
-// may make it so the modal renders a partial and sets everything up through that. going to double check to see if that works

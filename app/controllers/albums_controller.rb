@@ -24,7 +24,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @photos = Photo.where(album_id == @album.profile_id)
+    @photos = Photo.where(:album_id == @album.id)
+    @photo = Photo.new
   end
 
   def edit
@@ -52,10 +53,7 @@ class AlbumsController < ApplicationController
   private
 
     def find_album
-      @album = Album.find_by(params[:id])
-      # unless @album
-      #   render status: 404
-      # end
+      @album = Album.find_by(id: params[:id])
     end
 
     def album_params

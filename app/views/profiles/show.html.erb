@@ -18,8 +18,13 @@
           </div>
       	  <div class= "profile-content" id="albums"> 
             <!-- div appening photo albums -->  
-            <ul id= "albums_list">
-
+            <ul id= "albums_list"><h3 class="text-center">Photo Albums</h3>
+              <hr />
+              <% @albums.each do |album| %>
+                <li>
+                  <h4><%= link_to album.album_name, album_path(album.id) %></h4>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -28,7 +33,7 @@
             <!-- div appending playlists into -->
 					  <% @playlists.each do |list| %>
               <%= render partial: 'playlists/iframe', locals: { playlist: list } %>
-              <%= link_to playlist_path, method: :destroy %>
+              <%= link_to playlist_path, method: :destroy, class: "btn btn-warning" %>
             <% end %>
           </div>
 				</div>
@@ -97,7 +102,7 @@
               </form>
             </div>
             <div role="tabpanel" class="tab-pane" id="profile">
-              <form action="/albums" method:'POST' id="new_album_form" class= "input-lg">
+              <form id="new_album_form" class= "input-lg">
                 <h4>Album Name</h4>
                 <input type="text" name="album_name" id="album_name" required="true" />
                 <br>
