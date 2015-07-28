@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require jquery.fittext
 //= require wow.min
+//= require ckeditor/init
 //= require_tree .
 

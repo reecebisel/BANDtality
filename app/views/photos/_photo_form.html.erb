@@ -5,5 +5,5 @@
 <br>
 <%= f.file_field(:image) %>
 <%= f.hidden_field :album_id, value: params[:id] %>
-<%= f.submit %>
+<%= f.submit, class: "btn btn-primary" %>
 <% end %>

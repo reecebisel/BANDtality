@@ -8,7 +8,6 @@
 
 .body {
     margin-top: 100px;
-    background-color: #fff;
 }
 
 @media(min-width:768px) {
@@ -19,12 +18,12 @@
 
 .wrapper {
     padding-left: 0;
+    margin-top: 60px;
 }
 
 .page-wrapper {
     width: 100%;
     padding: 0;
-    background-color: #fff;
 }
 
 .huge {
@@ -45,6 +44,7 @@
 /* Top Navigation */
 .dark-nav{
     background-color: #0C1023;
+    border-bottom: solid 1px #999;
 }
 .top-nav {
     padding: 0 15px;
@@ -54,6 +54,7 @@
 .top-nav>li {
     display: inline-block;
     float: left;
+    font-family: 'Lato', sans-serif;
 }
 
 .top-nav>li>a {
@@ -61,6 +62,7 @@
     padding-bottom: 15px;
     line-height: 20px;
     color: #fff;
+    font-family: 'Lato', sans-serif;
 }
 
 .top-nav>li>a:hover,
@@ -70,6 +72,7 @@
 .top-nav>.open>a:focus {
     color: #fc9f61;
     background-color: #10152e;
+    font-family: 'Lato', sans-serif;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -82,6 +85,7 @@
     background-color: #fff;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    font-family: 'Lato', sans-serif;
 }
 
 .top-nav>.open>.dropdown-menu>li>a {
@@ -118,10 +122,11 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 51px;
+        top: 53px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
+        margin-top: 5px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
@@ -129,32 +134,39 @@ ul.alert-dropdown {
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
+        font-family: 'Lato', sans-serif;
     }
 
     .side-nav>li>a {
+        border-bottom: solid 1px #999;
         width: 225px;
+        font-family: 'Lato', sans-serif;
     }
 
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
         background-color: #cb5404 !important;
+        font-family: 'Lato', sans-serif;
     }
 }
 
 .side-nav>li>ul {
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 .side-nav>li>ul>li>a {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
 }
 
 .side-nav>li>ul>li>a:hover {
     color: #fff;
+    font-family: 'Lato', sans-serif;
 }
 
 /* Flot Chart Containers */

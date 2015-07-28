@@ -11,9 +11,9 @@ body {
     height: 100%;
 }
 
-body {
+/*body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
-}
+}*/
 
 
 hr {
@@ -480,6 +480,11 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.move_right {
+    padding-left: 200px;
+    padding-right: -200px;
 }
 
 .bigger {
