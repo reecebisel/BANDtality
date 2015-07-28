@@ -482,6 +482,11 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
+.move_right {
+    padding-left: 200px;
+    padding-right: -200px;
+}
+
 .bigger {
     font-size: 5em;
 }

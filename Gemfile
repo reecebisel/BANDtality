@@ -15,7 +15,7 @@ gem "paperclip", "~> 4.3"
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'gmaps4rails', '1.5.6'
+gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter', '~> 1.2.0'
 gem 'will_paginate', '~> 3.0.6'

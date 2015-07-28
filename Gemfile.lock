@@ -258,7 +258,7 @@ DEPENDENCIES
   devise
   faker
   font-awesome-sass
-  gmaps4rails (= 1.5.6)
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   literate_randomizer

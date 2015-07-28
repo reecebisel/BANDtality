@@ -21,12 +21,13 @@ class VenueRepsController < ApplicationController
 		@venue_rep = VenueRep.new(venue_rep_params)
 		@venue_rep.profile_id = @profile.id
 		if @venue_rep.save
-			address = Address.new(zip: params[:venue_rep][:addresses_attributes]['0'][:zip].to_i, 
-									street: params[:venue_rep][:addresses_attributes]['0'][:street],
-									city: params[:venue_rep][:addresses_attributes]['0'][:city],
-									state: params[:venue_rep][:addresses_attributes]['0'][:state],
-									venue_rep_id: @venue_rep.id
-									)
+			address = Address.new
+# (zip: params[:venue_rep][:addresses_attributes]['0'][:zip].to_i, 
+# 									street: params[:venue_rep][:addresses_attributes]['0'][:street],
+# 									city: params[:venue_rep][:addresses_attributes]['0'][:city],
+# 									state: params[:venue_rep][:addresses_attributes]['0'][:state],
+# 									venue_rep_id: @venue_rep.id
+# 									)
 			address.save
 			flash[:notice] = "Venue Representative Created!"
 			redirect_to profile_path(current_user.profile.id)
@@ -57,7 +58,7 @@ class VenueRepsController < ApplicationController
 private
 
 	def find_venue_rep
-		@venue_rep = VenueRep.find(params[:id])
+		@venue_rep = VenueRep.find_by_id(params[:id])
 	end
 
 	def venue_rep_params
