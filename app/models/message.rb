@@ -4,6 +4,8 @@ class Message < ActiveRecord::Base
   belongs_to :receiver, class_name: "Profile", foreign_key: "message_receiver_id"
   has_many :replies, dependent: :destroy
 
+  
+
   def self.my_messages(profile_id)
     # raise ""
     where(message_receiver_id: profile_id)
