@@ -3,8 +3,6 @@ $(document).ready(function(){
 $('#new_playlist_button').click(function(){
 
     var $newPlaylistForm = $('#new_playlist_form');
-    var urlAction = $newPlaylistForm.attr('action');
-    var httpMethod = $newPlaylistForm.attr('method');
     var $playlistUrl = $('#playlist_url');
     var $playlistDiv = $('#playlists');
     $.ajax({

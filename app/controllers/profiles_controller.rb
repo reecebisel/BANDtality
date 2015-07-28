@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
 	
   def show
   	@playlists = current_user.profile.playlists
+  	@albums = current_user.profile.albums
   end
 
   def new

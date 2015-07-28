@@ -12,6 +12,8 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.create(album_params)
+    @album.profile_id = current_user.profile.id
+
     if @album.save
       flash[:success]="Created new album. Add some photos!"
       redirect_to profile_path(@album.profile_id)
@@ -22,6 +24,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    @photos = Photo.where(album_id == @album.profile_id)
   end
 
   def edit
