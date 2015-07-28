@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
     @unread = @messages.where(reply_read: false)
     @read = @messages.where(reply_read: true)
     @sent_messages = Message.sent_messages(profile_id)
+    @replies = Message.replies(profile_id)
     # raise "the roof"
   end
 

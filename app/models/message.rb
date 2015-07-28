@@ -16,4 +16,8 @@ class Message < ActiveRecord::Base
   def self.last_message(message_id)
     
   end
+
+  def self.replies(profile_id)
+    where(message_sender_id: profile_id)
+  end
 end
