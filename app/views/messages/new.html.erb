@@ -1,26 +1,23 @@
-<div class="wrapper">
-	<div class ="page-wrapper">
+<div class=wrapper>
+	<div class="page-wrapper">
 		<div class="col-lg-12">
 		  <section class="panel">
-		      <div class="panel-heading">
-		          New Message
-		      </div>
-	      <div class="panel-body">
-	          <div class="form">
-              <form class="form-horizontal">
-
-								<%= form_for @message do |f| %>
-									<h4>To: <%= name_parent_profile(params[:message_receiver_id])%></h4>
-								  <h4><%= f.text_field :subject, class: "form-control",  placeholder: "Subject" %></h4>
-								  <h4><%= f.cktext_area :message_body, class: "input-lg text-center"%></h4>
-								  <%= f.hidden_field :message_receiver_id, value: params[:message_receiver_id] %>
-								  <%= f.submit 'Send', class: "btn btn-warning btn-lg" %>
-							  <% end %>
-
-              </form>
-	          </div>
+	      <div class="panel-heading">
+	          New Message
 	      </div>
-		  </section>
+	      <div class="panel-body">
+				  <div class= "col-xs-12 col-md-8-offset-2">
+				  	<h4>To: <%= name_parent_profile(params[:message_receiver_id])%></h4>
+					  <%= form_for @message do |f| %>
+						  <h4><%= f.text_field :subject, class: "form-control", placeholder: "Subject" %></h4>
+						  <h4><%= f.cktext_area :message_body %></h4>
+						  <%= f.hidden_field :message_receiver_id, value: params[:message_receiver_id] %>
+						  <%= f.submit 'Send', class: "btn btn-warning btn-lg" %>
+					  <% end %>
+					</div>
+				 </div>
+		  	</section>
+			</div>
 		</div>
-	</div>
+  </div>
 </div>
