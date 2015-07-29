@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  # sets Paperclip to upload images to Amazin s3
+  # sets Paperclip to upload images to Amazon s3
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_host_name => 's3-us-west-2.amazonaws.com'
