@@ -2,23 +2,34 @@
 	<div class="page-wrapper">
 		<div class="col-lg-12">
 		  <section class="panel">
+	      	<div class="panel-heading">
+				  	subject: <%= @message.subject %>
+	      	</div>
 	      <div class="panel-body">
 				  <div class= "col-xs-12 col-md-8-offset-2">
-				  	<h2><b><%= @message.subject %></b></h2>
-				  	from: <%= name_parent_profile(@message.message_sender_id)%>
-			  	  <br/><br/><br/>
-			  	  <p><%= sanitize @message.message_body %></p>
+				  	to: <%= name_parent_profile(@message.message_receiver_id)%>
+				  	<br>
+				  	from: <%= link_to("#{name_parent_profile(@message.message_sender_id)}", profile_path(@message.message_sender_id))%>
+			  	  <br/><br/>
+			  	  <h4><%= sanitize @message.message_body %></h4>
 					</div>
 				</div>
-				<div class ="panel-body">
-				  <div class= "col-xs-12 col-md-8-offset-2">
-					  <% @replies.each do |reply| %>
-						  <%= sanitize reply.reply_body %>
-					  <% end %>
-				  </div>
+				  <% @replies.each do |reply| %>
+	  				<div class="panel-heading">
+					  	<span class="fa fa-hand-o-right"></span> re: <%= @message.subject %>
+		      	</div>
+	  				<div class ="panel-body">
+						  <div class= "col-xs-12 col-md-8-offset-2">
+					  	to: <%= link_to("#{name_parent_profile(reply.message_sender_id)}", profile_path(@message.message_sender_id))%>
+					  	<br>
+					  	from: <%= link_to("#{name_parent_profile(reply.message_receiver_id)}", profile_path(@message.message_sender_id))%>
+					  	<br><br>
+						  <h4><%= sanitize reply.reply_body %><h4>
+  					  </div>
+						</div>
+				  <% end %>
 				</div>
-		  	</section>
-			</div>
+	  	</section>
 		</div>
 		<%= link_to("Reply", new_reply_path(message_id: @message.id), class: "btn btn-warning btn-lg") %>
   </div>

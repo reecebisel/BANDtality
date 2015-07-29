@@ -454,6 +454,7 @@ fieldset[disabled] .btn-primary.active {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
+    font-family: 'Lato', sans-serif;
 }
 
 .btn-xl {
