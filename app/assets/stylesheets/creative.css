@@ -33,6 +33,12 @@ a {
     transition: all .35s;
 }
 
+.fit-logo {
+    height: 150px;
+    margin-top: 60px;
+    padding-bottom: 10px;
+
+}
 .white-text {
     color: #fff;
 }
