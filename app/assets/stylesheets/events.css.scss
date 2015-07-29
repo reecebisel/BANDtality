@@ -3,13 +3,13 @@
   repeat: no-repeat;
   background-size: 100%;
   padding: 20px;
-  background-position: center;
+  margin-top: -20px;
+   background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
-
 
 .bigger_font {
   font-size: 28px;
@@ -76,6 +76,7 @@ font-family: 'Wire One', sans-serif;
 .whitesmoke {
   background-color: whitesmoke;
   color: grey;
+  padding: 5px 10px 10px 10px;
 }
 
 .calendar_grid {

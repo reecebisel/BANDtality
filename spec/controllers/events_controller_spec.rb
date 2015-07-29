@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe EventsController, type: :controller do
 
  let(:event) {Event.create(event_name: 'Big Crazy Music Festival')}
+ let(:user) {User.create(email: 'test@gmail.com', password: 'password')}
 
 	describe "GET #index" do
 		it "returns http success" do
+    sign_in(user)
 			get :index
 	    expect(response).to have_http_status(:success)
 	  end
@@ -13,6 +15,7 @@ RSpec.describe EventsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
+    sign_in(user)
       get :show, id: event.id
       expect(response).to have_http_status(:success)
     end
@@ -32,6 +35,7 @@ RSpec.describe EventsController, type: :controller do
 
   describe "GET #new" do 
     it "returns http success" do
+    sign_in(user)
       get :new
       expect(response).to have_http_status(:success)
     end
@@ -39,6 +43,7 @@ RSpec.describe EventsController, type: :controller do
 
   describe "GET #edit" do
     it "edits event successfully" do
+    sign_in(user)
       get :edit, id: event.id
       expect(response).to have_http_status(:success)
     end
@@ -46,6 +51,7 @@ RSpec.describe EventsController, type: :controller do
 
   describe "PUT #update" do
     it "updates event successfully" do
+    sign_in(user)
       put :update, id: event.id, event: {event_name: 'Test Event'}
       new_event = 'Test Event'
       updated_event = event.reload
