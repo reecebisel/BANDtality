@@ -37,6 +37,10 @@ a {
     color: #fff;
 }
 
+.white-background{
+    background-color: #fff;
+}
+
 a:hover,
 a:focus {
     color: #eb3812;
