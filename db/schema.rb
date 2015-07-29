@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728122204) do
+ActiveRecord::Schema.define(version: 20150729010042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20150728122204) do
     t.integer  "musician_id"
     t.integer  "visual_artist_id"
     t.integer  "venue_rep_id"
+    t.integer  "user_id"
   end
 
   create_table "playlists", force: :cascade do |t|

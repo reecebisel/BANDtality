@@ -1,6 +1,3 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
-
 <div class ="wrapper"> 
   <div class ="page-wrapper">
     <div>
@@ -29,8 +26,9 @@
                 <% @photos.each do |photo| %>
                 <div class="thumbnail col-xs-6">
                   <%= image_tag photo.image.url(:medium), class: "img-responsive col-xs-8-offset-2" %>
-                  <% if current_user.profile.id == photo.profile.id %>
-                  <%= link_to 'Delete', edit_photo_path(photo.id), class: 'fa fa-fw fa-ban' %>
+                  <%# raise "" %>
+                  <% if current_user.id == photo.user_id %>
+                  <%= link_to 'Delete', photo_path(photo.id), method: :delete, class: 'fa fa-fw fa-ban' %>
                   <% end %>
                 </div>
                 <% end %>
@@ -59,6 +57,7 @@
         </ul>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="home">
+            <h3>Adding a Photo</h3>
             <ol>
               <li>Click the <strong>browse button</strong></li>
               <li>Choose the photo you want to upload</li>

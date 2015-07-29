@@ -58,7 +58,6 @@
               <%= render partial: 'playlists/iframe', locals: { playlist: list } %>
               <% if current_user.profile.id == list.profile_id %>
                 <%= link_to "Delete", playlist_path(list.id), method: :destroy, class: "btn btn-danger btn-sm pull-right" %>
-                <%= link_to "Edit", edit_playlist_path(list.id), class: "btn btn-warning btn-sm pull-right" %>
                 <div class="spacer"></div>
               <% end %>
             <% end %>
@@ -69,13 +68,6 @@
 		</div>
   </div>
 </div>
-
-
-      <!-- form thing for the playlist -->
-          <!-- Playlist Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
-  Add Content
-</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
