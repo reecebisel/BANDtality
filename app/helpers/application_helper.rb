@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def name_parent_profile(profile_id)
-    Profile.find(profile_id).name
+    Profile.find(profile_id).name if profile_id.present?
   end
 
   def six_random_profiles

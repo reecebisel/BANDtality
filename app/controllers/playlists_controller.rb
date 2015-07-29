@@ -41,7 +41,7 @@ class PlaylistsController < ApplicationController
 
   def destroy
     @playlist.destroy  
-    redirect_to playlists_path
+    redirect_to profile_path(current_user.profile.id)
   end
 
   private
