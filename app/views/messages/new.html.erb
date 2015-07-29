@@ -12,7 +12,7 @@
 						  <h4><%= f.text_field :subject, class: "form-control", placeholder: "Subject" %></h4>
 						  <h4><%= f.cktext_area :message_body %></h4>
 						  <%= f.hidden_field :message_receiver_id, value: params[:message_receiver_id] %>
-						  <%= f.submit "Send", class: "btn btn-warning" %>
+						  <%= f.submit "Send", class: "btn btn-primary" %>
 					  <% end %>
 					</div>
 				 </div>
