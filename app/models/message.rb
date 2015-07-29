@@ -19,7 +19,7 @@ class Message < ActiveRecord::Base
     
   end
 
-  def self.replies(profile_id)
-    where(message_sender_id: profile_id)
-  end
+  # def self.replies(profile_id)
+  #   where(message_sender_id: profile_id)
+  # end
 end
