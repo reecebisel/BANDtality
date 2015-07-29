@@ -1,11 +1,25 @@
-<div class= "wrapper">
-  <h2><%= @message.subject %></h2>
-  from <%= name_parent_profile(@message.message_sender_id)%>
-  <h3><%= sanitize @message.message_body %></h3>
-  <hr />
-  <% @replies.each do |reply| %>
-  <%= sanitize reply.reply_body %>
-  <hr />
-  <% end %> 
-  <%= link_to("Reply", new_reply_path(message_id: @message.id), class: "btn btn-warning btn-lg") %>
+<div class=wrapper>
+	<div class="page-wrapper">
+		<div class="col-lg-12">
+		  <section class="panel">
+	      <div class="panel-body">
+				  <div class= "col-xs-12 col-md-8-offset-2">
+				  	<h2><b><%= @message.subject %></b></h2>
+				  	from: <%= name_parent_profile(@message.message_sender_id)%>
+			  	  <br/><br/><br/>
+			  	  <p><%= sanitize @message.message_body %></p>
+					</div>
+				</div>
+				<div class ="panel-body">
+				  <div class= "col-xs-12 col-md-8-offset-2">
+					  <% @replies.each do |reply| %>
+						  <%= sanitize reply.reply_body %>
+					  <% end %>
+				  </div>
+				</div>
+		  	</section>
+			</div>
+		</div>
+		<%= link_to("Reply", new_reply_path(message_id: @message.id), class: "btn btn-warning btn-lg") %>
+  </div>
 </div>
