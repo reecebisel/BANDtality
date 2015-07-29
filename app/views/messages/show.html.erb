@@ -1,5 +1,6 @@
 <div class= "wrapper">
   <h2><%= @message.subject %></h2>
+  from <%= name_parent_profile(@message.message_sender_id)%>
   <h3><%= sanitize @message.message_body %></h3>
   <hr />
   <% @replies.each do |reply| %>

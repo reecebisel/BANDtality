@@ -33,6 +33,10 @@ a {
     transition: all .35s;
 }
 
+.white-text {
+    color: #fff;
+}
+
 a:hover,
 a:focus {
     color: #eb3812;
