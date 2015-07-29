@@ -1,4 +1,13 @@
 Rails.application.configure do
+  # sets Paperclip to upload images to Amazin s3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -78,16 +87,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  # sets Paperclip to upload images to Amazin s3
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_host_name => 's3-us-west-2.amazonaws.com'
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  }
 end
 
 
