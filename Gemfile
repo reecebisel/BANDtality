@@ -24,7 +24,8 @@ gem "ckeditor"
 
 
 group :development, :production do
-gem 'sendgrid'
+  gem 'sendgrid'
+  gem 'delayed_job_active_record'
 end
 
 
