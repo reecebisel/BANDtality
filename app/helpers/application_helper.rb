@@ -12,6 +12,11 @@ module ApplicationHelper
     Profile.all.sample(6)
   end
 
+  def reply_to(message_id)
+    receiver_id = Message.find(message_id).message_receiver_id
+    Profile.find(receiver_id).name
+  end
+
   def profile_type(profile)
     if profile.musician.present?
       'Musician'
