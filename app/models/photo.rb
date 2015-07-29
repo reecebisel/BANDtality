@@ -6,4 +6,5 @@ class Photo < ActiveRecord::Base
   belongs_to :musician
   belongs_to :venue_rep
   belongs_to :visual_artist
+  belongs_to :user
 end

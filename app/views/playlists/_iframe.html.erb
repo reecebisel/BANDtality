@@ -2,12 +2,10 @@
   <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" id="yt_frame" src="<%= embed_yt_url(playlist.playlist_url) %>"></iframe>
   </div>
-  <div class="spacer"></div>
 
 <% elsif playlist.playlist_url.include?("soundcloud") %>
   <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" id="sc-widget" src="<%= embed_sc_url(playlist.playlist_url) %>"></iframe>
   </div>
-  <div class="spacer"></div>
   <!-- <iframe  src="" width="100%" height="56%" scrolling="no" frameborder="no"></iframe> -->
 <% end %>
