@@ -1,11 +1,14 @@
 require 'rails_helper'
 
+
 RSpec.describe AddressesController, type: :controller do
 
 let(:address) {Address.create(street: '123 South Street', city: 'Test City', state: 'Test State', zip: 12345)}
+ let(:user) {User.create(email: 'test@gmail.com', password: 'password')}
 
 	describe "GET #index" do
 		it "returns http success" do
+      sign_in(user)
 			get :index
 	    expect(response).to have_http_status(:success)
 	  end
@@ -13,6 +16,7 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "GET #show" do
     it "returns http success" do
+    sign_in(user)
       get :show, id: address.id
       expect(response).to have_http_status(:success)
     end
@@ -20,6 +24,7 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "POST #create" do
     it "creates a new address successfully" do
+    sign_in(user)
       post :create, address: {street: '666 Adams Street', city: 'Spooky City', state: 'Spooky State', zip: 98765}
       expect(response).to have_http_status(:redirect)
     end
@@ -32,6 +37,7 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "GET #new" do 
     it "returns http success" do
+    sign_in(user)
       get :new
       expect(response).to have_http_status(:success)
     end
@@ -39,6 +45,7 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "GET #edit" do
     it "edits address successfully" do
+    sign_in(user)
       get :edit, id: address.id
       expect(response).to have_http_status(:success)
     end
@@ -46,6 +53,7 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "PUT #update" do
     it "updates address successfully" do
+    sign_in(user)
       put :update, id: address.id, address: {street: '555 Street'}
       new_address = '555 Street'
       updated_address = address.reload
@@ -61,6 +69,7 @@ let(:address) {Address.create(street: '123 South Street', city: 'Test City', sta
 
   describe "DELETE #destroy" do
     it "deletes address successfully" do
+    sign_in(user)
       delete :destroy, id: address.id
       expect(response).to have_http_status(:redirect)
     end

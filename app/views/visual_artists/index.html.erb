@@ -1,7 +1,7 @@
 <div class="page-wrapper">  
   <div class="col-sm-12 col-lg-10 offset-2 pull-right">
-    <h1 class="text-center browse-header">Visual Artists
-      <p class= "text-center">
+    <h1 class="text-center browse-header fjalla_font">Visual Artists
+      <p class= "text-center cantarell_font">
       <%= link_to "All Profiles", profiles_path, class: "btn btn-primary btn-lg", id: "all-profiles-button" %>
       </p>
     </h1>
@@ -9,9 +9,9 @@
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
             <%= image_tag find_parent_profile(visual_artist.profile_id).image.url(:medium) %>
-            <div class="caption">
+            <div class="cantarell_font caption">
               <h3><%= link_to find_parent_profile(visual_artist.profile_id).name, profile_path(visual_artist.profile_id), class: "btn-lg btn-primary" %>
-                <h4><%= visual_artist.medium %></h4>
+                <h4 class="cantarell_font"><%= visual_artist.medium %></h4>
             </div>
           </div>
         </div>

@@ -30,6 +30,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
+  config.serve_static_assets = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -78,7 +79,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  # sets Paperclip to upload images to Amazin s3
+  # sets Paperclip to upload images to Amazon s3
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {

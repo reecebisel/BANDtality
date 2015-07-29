@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150729010042) do
     t.integer  "musician_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "whole_address"
   end
 
   create_table "albums", force: :cascade do |t|
@@ -39,6 +40,16 @@ ActiveRecord::Schema.define(version: 20150729010042) do
     t.integer  "profile_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string   "title"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
