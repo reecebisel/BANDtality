@@ -26,9 +26,7 @@ group :development, :production do
   gem 'sendgrid'
 end
 
-group :test do
-  gem "factory_girl_rails", "~> 4.0"
-end
+
 
 
 group :development, :test do
