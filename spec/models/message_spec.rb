@@ -2,22 +2,24 @@ require 'rails_helper'
 
 RSpec.describe Message, type: :model do
   before(:each) do
-    @profile = Profile.find_by(id: 6)
-      @message1 = Message.new(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: 7, message_receiver_id: 6, message_sender_id: 7, reply_read: true)
-      @message2 = Message.new(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: 6, message_receiver_id: 4, message_sender_id: 6, reply_read: false)
-      @message3 = Message.new(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: 6, message_receiver_id: 4, message_sender_id: 6, reply_read: true)
-      @message4 = Message.new(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: 7, message_receiver_id: 6, message_sender_id: 7, reply_read: false)
+    @profile1 = Profile.create(name: "James Waler Mcfadden")
+    @profile2 = Profile.create(name: "Edwardo Santiago")
+      @message1 = Message.create(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: @profile1.id, message_receiver_id: @profile2.id, message_sender_id: @profile1.id, reply_read: true)
+      @message2 = Message.create(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: @profile2.id, message_receiver_id: @profile1.id, message_sender_id: @profile2.id, reply_read: false)
+      @message3 = Message.create(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: @profile2.id, message_receiver_id: @profile1.id, message_sender_id: @profile2.id, reply_read: true)
+      @message4 = Message.create(subject: "Shalome", message_body: "Hey there, how you doing?", profile_id: @profile1.id, message_receiver_id: @profile2.id, message_sender_id: @profile1.id, reply_read: false)
     end
   
   context "Class methods" do
     describe "my_messages" do
       it "finds a profiles messages" do
-        expect(Message.all.my_messages(@profile.id)).to eq([@message1, @message2])
+        expect(Message.all.my_messages(@profile1.id)).to eq([@message2, @message3])
       end
 
       # not totally sure that i need to check for the failure
       it "fails to find profile messages" do 
-        expect(Message.all.my_messages(@profile.id)).to_not eq([@message1, @message2])
+        
+        expect(Message.all.my_messages(@profile1.id)).to_not eq([@message1, @message4])
       end
     end
 
