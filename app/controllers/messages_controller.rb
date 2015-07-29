@@ -10,7 +10,6 @@ class MessagesController < ApplicationController
     @unread = @messages.where(reply_read: false).order("created_at DESC")
     @read = @messages.where(reply_read: true).order("created_at DESC")
     @sent_messages = Message.sent_messages(profile_id).order("created_at DESC")
-    @replies = Message.replies(profile_id)
     # raise "the roof"
   end
 
@@ -39,6 +38,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
+    redirect_to messages_path
   end
 
   private

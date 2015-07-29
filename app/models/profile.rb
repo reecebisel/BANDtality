@@ -10,7 +10,8 @@ class Profile < ActiveRecord::Base
   has_many :replies, dependent: :destroy
 
  	has_attached_file :image, styles: { large: "600x600!", 
-																				 medium: "300x300!", 
+																				 medium: "300x300!",
+                                         # medlg: "450x450", 
 																				 thumb: "150x150!" }, 
                                  # crops square at exactly ^ 150px
 																				 :default_url => "/images/:style/missing.png"
