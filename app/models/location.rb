@@ -6,3 +6,5 @@ class Location < ActiveRecord::Base
       address
   end
 end
+
+# wasn't sure what is going on with the gmaps4rails_address method. Probably should ask tiffany about it tomrrow
