@@ -3,6 +3,14 @@
 
 .well {
   	border-radius: 5px;
-    background-color: white; 
-
+    background-color: white;
+}
+#album_delete {
+  display: inline;
+}
+#content-footer {
+  border: none;
+  background-color: none;
+  box-shadow: none;
+  background: none;
 }

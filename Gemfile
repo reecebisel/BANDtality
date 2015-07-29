@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1'
 
 gem 'bootstrap-sass', '~>3.3.5'
 gem 'rails', '4.2.3'
@@ -23,7 +24,8 @@ gem "ckeditor"
 
 
 group :development, :production do
-gem 'sendgrid'
+  gem 'sendgrid'
+  gem 'delayed_job_active_record'
 end
 
 

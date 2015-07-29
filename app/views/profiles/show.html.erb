@@ -22,23 +22,45 @@
 								<% else %>
 									<%= render 'no_info_partial' %>
 								<% end %>
-
-		            <%= link_to("Message", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+                
+                <% if current_user.profile.id != @profile.id %>
+                <%= link_to("Message", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+                <% end %>
+                <% if current_user.profile.id == @profile.id %>
                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Content</button>
+                <% end %>
 							</div>
 						</div> 
           </div>
-      	</div>
+      	  <div class= "profile-content" id="albums"> 
+            <!-- div appening photo albums -->  
+            <ul id= "albums_list"><h3 class="text-center">Photo Albums</h3>
+              <hr />
+              <% @albums.each do |album| %>
+                <li>
+                  <div class= "row">
+                    <h4>
+                      <%= link_to album.album_name, album_path(album.id) %>
+                      <% if current_user.profile.id == @profile.id %>
+                        <p id="album_delete"><%= link_to 'Delete', album_path(album.id), method: :destroy, class: "pull-right" %></p>
+                      <% end %>
+                    </h4>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
     		<div class="col-md-7" id="content">
           <div class= "profile-content" id="playlists"> 
             <!-- div appending playlists into -->
 					  <% @playlists.each do |list| %>
               <%= render partial: 'playlists/iframe', locals: { playlist: list } %>
+              <% if current_user.profile.id == list.profile_id %>
+                <%= link_to "Delete", playlist_path(list.id), method: :destroy, class: "btn btn-danger btn-sm pull-right" %>
+                <div class="spacer"></div>
+              <% end %>
             <% end %>
-          </div>
-          <div class= "profile-content" id="albums"> 
-            <!-- div appening photo albums -->
-            
           </div>
 				</div>
         <!-- the end of the thing -->
@@ -46,13 +68,6 @@
 		</div>
   </div>
 </div>
-
-
-      <!-- form thing for the playlist -->
-          <!-- Playlist Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
-  Add Content
-</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -66,14 +81,42 @@
       <div class="modal-body">
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Playlist</a></li>
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Instructions</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Playlists</a></li>
             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Albums</a></li>
-<!--             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Photos</a></li> -->
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
+              <div class="playlist_instructions">
+                <h3>Adding a playlist</h3>
+                <h4>From Youtube</h4>
+                <ol>
+                  <li>Find the video from YouTube.com</li>
+                  <li>Copy the URL from the top of the page. <strong>Hint:</strong> You can highlight and right click to copy(command click if you're a Mac user).</li>
+                  <li>Paste the URL link into our form.</li>
+                  <li>Click Save Playlist</li>
+                </ol>
+                <h4>From SoundCloud</h4>
+                <ol>
+                  <li>Find the playlist you want to share.</li>
+                  <li>Click the <strong>share</strong> button.</li>
+                  <li>Highlight and copy their link.</li>
+                  <li>Paste that link into our form.</li>
+                  <li>Click Save Playlist</li>
+                </ol>
+              </div>
+              <hr id="instruction_hr">
+              <div class="playlist_instructions">
+                <h3>Adding a photo album</h3>
+                <ol>
+                  <li>Name you new photo album.</li>
+                  <li>Click the <strong>Save Album</strong> button</li>
+                </ol>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
               <form id="new_playlist_form" class= "input-lg">
                 <h4>Playlist Url</h4>
                 <input type="text" name="playlist_url", id="playlist_url" required="true" />
@@ -82,25 +125,20 @@
               </form>
             </div>
             <div role="tabpanel" class="tab-pane" id="profile">
-              <form action="/albums" method:'POST' id="new_album_form" class= "input-lg">
+              <form id="new_album_form" class= "input-lg">
                 <h4>Album Name</h4>
-                <input type="text" name="album_name" required="true" />
+                <input type="text" name="album_name" id="album_name" required="true" />
                 <br>
                 <button type="button" id="new_album_button" class= "btn btn-primary">Save Album</button>
               </form>
             </div>
           </div>
-        <div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+        <div class="modal-footer" id="content-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 </div>       
-<!-- playlists end  -->
-
-<!-- photo end -->
 
 

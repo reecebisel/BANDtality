@@ -12,6 +12,8 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.create(album_params)
+    @album.profile_id = current_user.profile.id
+
     if @album.save
       flash[:success]="Created new album. Add some photos!"
       redirect_to profile_path(@album.profile_id)
@@ -22,6 +24,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    @photos = Photo.where(:album_id == @album.id)
+    @photo = Photo.new
   end
 
   def edit
@@ -49,10 +53,7 @@ class AlbumsController < ApplicationController
   private
 
     def find_album
-      @album = Album.find_by(params[:id])
-      # unless @album
-      #   render status: 404
-      # end
+      @album = Album.find_by(id: params[:id])
     end
 
     def album_params

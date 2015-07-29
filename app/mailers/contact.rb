@@ -6,30 +6,30 @@ class Contact < ApplicationMailer
 
 	# plain text email
 	def send_contact_info
-		mail :to => "bandtality@gmail.com",
-				 :subject => "Test plain text email subject",
-				 :body => 'This is the plain text email body.'
+		mail(:to => "bandtality@gmail.com",
+						 :subject => "Test plain text email subject",
+						 :body => 'This is the plain text email body.')
 	end
 
 	# HTML email
 	def send_contact_info_html
-	mail :to => "bandtality@gmail.com",
-			 :subject => "Test HTML email subject"
+	mail(:to => "bandtality@gmail.com",
+			 :subject => "Test HTML email subject")
 	end
 
 	# HTML email with args
 	def email_with_args(to_email, from_email, subject)
-	  mail :to => to_email,
+	  mail(:to => to_email,
 			   :from => from_email,
-				 :subject => subject
+				 :subject => subject)
 	end
 
 	# gives you instance variables you can use in your views
 	def email_with_args_and_instance_vars(first_name, last_name)
 		@first_name = first_name,
 		@last_name = last_name,
-		mail :to => "bandtality@gmail.com",
-			 	 :subject => "test HTML email subject"
+		mail(:to => "bandtality@gmail.com",
+			 	 :subject => "test HTML email subject")
 	end
 
 end

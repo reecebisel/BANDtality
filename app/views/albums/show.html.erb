@@ -1,9 +1,46 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Photo
-</button>
+<div class ="wrapper"> 
+  <div class ="page-wrapper">
+    <div>
+      <div>
+        
+        <div class="col-md-4">
+          <div class="panel" >
+            <div class="panel-body">
+              <div>
+                <%= image_tag find_parent_profile(@album.profile_id).image.url(:medium), class: "img-responsive" %>
+                <h1><%= find_parent_profile(@album.profile_id).name %></h1>
+                <p> <%= find_parent_profile(@album.profile_id).bio %></p>
+                <% if current_user.profile.id != find_parent_profile(@album.profile_id).id %>
+                <%= link_to("Message", new_message_path(message_receiver_id: @profile.id), class: "btn btn-primary btn-large")%>
+                <% end %>
+                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Photo</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+        <div class="col-md-7" id="content">
+          <div class= "profile-content" id="playlists">
+          <div class="row">
+            <% if @album.photos.present? %>
+            <div>
+                <% @photos.each do |photo| %>
+                <div class="thumbnail col-xs-6">
+                  <%= image_tag photo.image.url(:medium), class: "img-responsive col-xs-8-offset-2" %>
+                  <%# raise "" %>
+                  <% if current_user.id == photo.user_id %>
+                  <%= link_to 'Delete', photo_path(photo.id), method: :delete, class: 'fa fa-fw fa-ban' %>
+                  <% end %>
+                </div>
+                <% end %>
+            </div>
+            <% else %>
+              <div></div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -14,11 +51,26 @@
         <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
       </div>
       <div class="modal-body">
-        <%= %>
+        <ul class="nav nav-tabs" role="tablist">
+           <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">instructions</a></li>
+           <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" value= <%= @album.id %>>Photos</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <h3>Adding a Photo</h3>
+            <ol>
+              <li>Click the <strong>browse button</strong></li>
+              <li>Choose the photo you want to upload</li>
+              <li>Click Save Photo</li>
+            </ol>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+            <%= render partial: 'photos/photo_form', locals: { photos: @photo } %>
+          </div>
+        </div>                   
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
