@@ -8,6 +8,11 @@ class Search < ActiveRecord::Base
 		
 		# finding visual artist
 		profile = Profile.joins(:visual_artist).where(:visual_artist => { :medium => "#{medium}"}) if medium.present?
+
+		# finding venue rep
+		profile = Profile.joins(:venue_rep).where(:venue_rep => { :venue_name => "#{venue}"}) if venue.present?
+
+		
 		return profile
 	end
 end 

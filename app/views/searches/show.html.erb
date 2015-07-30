@@ -1,13 +1,43 @@
  
 <div class="wrapper">
-	<%= link_to 'Back', new_search_path %>
+	<div class="page-wrapper">
+			<%= link_to 'Back', new_search_path, class: "btn btn-primary" %>
 	<%# if @search.search_profile.empty? %>
 <!-- 		<p> No Records Found. </p> -->
 	<%# else %>
-		<% if @search.search_profile %>
-			<% @search.search_profile.each do |profile|%>
-				<%= profile.name %>
-			<%end%>
-		<% end %>
-	<%#end%>
+		<div class="col-md-4">
+			<% if @search.search_profile %>
+				<% @search.search_profile.each do |profile|%>
+	        <section class="panel">
+	          <div class="panel-heading">
+	            Profile
+	          </div>
+	       		<div class="panel-body">
+	            <div>
+	          		<div class="img-responsive">
+									<%= image_tag profile.image.url(:medium) %>
+								</div>
+								<h1><%= link_to("#{profile.name}", profile_path(profile.id)) %></h1>
+								<p> <%= profile.bio %></p>
+
+								<% if profile.musician.present? %>
+									Musician
+									<h4>Instrument: <%= profile.musician.instrument %></h4>
+									<h4>Genre: <%= profile.musician.genre %></h4>
+								<% elsif profile.visual_artist.present? %>
+									Visual Artist
+									<h4>Medium: <%= profile.visual_artist.medium %></h4>
+								<% elsif profile.venue_rep.present? %>
+									Venue Representative
+								  <h4>Venue: <%= @profile.venue_rep.venue_name %></h4>
+								<% else %>
+								<% end %>
+	              <%= link_to("Message", new_message_path(message_receiver_id: profile.id), class: "btn btn-primary btn-large")%>
+							</div>
+						</div> 
+	        </section>
+				<%end%>
+			<% end %>
+		</div>
+	</div>
 </div>
