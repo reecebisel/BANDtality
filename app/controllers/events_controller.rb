@@ -21,7 +21,7 @@ class EventsController < ApplicationController
 		@event = Event.new(event_params)
 		if @event.save
 			flash[:notice]= "Event created!"
-			redirect_to events_path
+			redirect_to event_path(@event.id)
 		else
 			flash[:error]= "Something went wrong. Please try again."
 			render :new
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
 	def update
 		if @event.update(event_params)
 			flash[:notice]= "Event updated!"
-			redirect_to events_path
+			redirect_to event_path(@event.id)
 		else
 			flash[:error]= "Something went wrong. Please try again."
 			render :edit
