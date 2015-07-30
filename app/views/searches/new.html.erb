@@ -1,32 +1,26 @@
-
-<div class="wrapper">
-	Advanced Search
+<div class="wrapper container">
+	<h3>Advanced Search</h3>
 	<%= form_for @search, html: {class:"pure-form"} do |f| %>
-		<div> 
+		<div class="form-group"> 
 			<%= f.label :keywords %>
-			<%= f.text_field :keywords %>
+			<%= f.text_field :keywords, class: "form-control" %>
 		</div>
 
-		<div> 
-			<%= f.label :state %>
-			<%= f.text_field :state %>
-		</div>
-
-		<div> 
-			<%= f.label :zip %>
-			<%= f.text_field :zip %>
-		</div>
-
-		<div> 
+		<div class="form-group"> 
 			<%= f.label :instrument %>
-			<%= f.text_field :instrument %>
+			<%= f.text_field :instrument, class: "form-control" %>
 		</div>
 
-		<div> 
+		<div class="form-group"> 
 			<%= f.label :genre %>
-			<%= f.text_field :genre %>
+			<%= f.text_field :genre, class: "form-control" %>
 		</div>
 
-		<%= f.submit "Search" %>
+		<div class="form-group"> 
+			<%= f.label :medium %>
+			<%= f.text_field :medium, class: "form-control" %>
+		</div>
+
+		<%= f.submit "Search", class: "btn btn-primary" %>
 	<%end%>
 </div>

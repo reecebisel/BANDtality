@@ -18,6 +18,5 @@ class SearchesController < ApplicationController
 	private
 	def search_params
 		params.require(:search).permit(:keywords, :zip, :state, :category, :name, :instrument, :genre)
-		
 	end
 end

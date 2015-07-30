@@ -4,6 +4,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ @import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
 
 html,
 body {
@@ -33,10 +34,17 @@ a {
     transition: all .35s;
 }
 
+.fit-logo {
+    height: 150px;
+    margin-top: 60px;
+    padding-bottom: 10px;
+
+}
 .white-text {
     color: #fff;
 }
 
+<<<<<<< HEAD
 .orange_text {
     color: #f05f40;
 }
@@ -63,6 +71,9 @@ a {
     margin-top: -20px;
     color: black;
 }
+.white-background{
+    background-color: #fff;
+}
 
 a:hover,
 a:focus {
@@ -72,6 +83,7 @@ a:focus {
 h1 {
     font-family: 'Fjalla One', sans-serif;
 }
+
 
 h2,
 h3,

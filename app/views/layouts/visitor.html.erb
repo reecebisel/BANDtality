@@ -60,12 +60,11 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-              <!--  <a id="bandtality" class="permanent_marker black_text">Band<a><a id="bandtality2" class="wire_one black_text">tality</a>  -->
-                <a id="main_title" class="black_text">BANDtality</a><br>
-                <h2 id="slogan">Local Band Resource Network</h2>
-                <hr>
-                
-                <h2 class="white_text">Click here to get started!</h2><br>
+                <div>
+                    <img src="/assets/bandtality-logo.png" alt="Bandtality Logo" class="fit-logo">
+                    <h1>BANDtality</h1>
+                </div>
+                <p>Connect with musicians, venues, or visual artists for your show.</p>
                 <%= link_to("Login", new_user_session_path, class: "btn btn-default btn-xl page-scroll")%>
                 <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
             </div>
@@ -88,7 +87,7 @@
         </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="white-background">
      <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -169,7 +168,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="white-background">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
