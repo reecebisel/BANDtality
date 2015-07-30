@@ -1,12 +1,12 @@
 <% if current_user.profile.id == @profile.id %>
-<div class="login-modal modal show" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center">Edit Profile</h1>
+<div class="wrapper">
+  <div class="page-wrapper">
+    <seciton class"panel">
+      <div class="panel-heading">
+        Edit Profile
       </div>
-      <div class="modal-body">
+      <div class="panel-body">
+          
         <%= form_for @profile, :html => { :class => "form col-md-12 center-block" } do |f| %>
           <div class="form-group">  
             <%= f.text_field :name, autofocus: true, :class => "form-control input-lg", placeholder: "Display Name" %>
@@ -22,18 +22,16 @@
             <%= f.file_field(:image)%>
           <br/>
           <div class="form-group">
-            <%= f.submit "Save", :class => "btn btn-primary btn-lg btn-block" %>
+            <%= f.submit "Save", :class => "btn btn-primary" %>
           </div>
         <% end %>
+        <div>
+          <%= link_to 'Delete Profile', user_registration_path, :confirm => 'Are you sure you want to destroy your account? Note: This will also get rid of all your photos and playlists.', :method => :delete, class: "fa fa-fw fa-trash-o" %>
+        </div>
       </div>
-      <div class="modal-footer">
-          <div class="col-md-12">
-
-          </div>
-      </div>  
-    </div>
+    </section>
+    <% else %>
+    	<%= render partial: 'profiles/file_not_found' %>
+    <% end %>
   </div>
 </div>
-<% else %>
-	<%= render partial: 'profiles/file_not_found' %>
-<% end %>

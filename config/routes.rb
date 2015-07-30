@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get 'pages/choose_profile', as: :choose_profile
   get 'pages/founders', as: :founders
-  get 'pages/settings', as: :settings
   
   devise_for :users, controllers: { registrations: "registrations" }
 
