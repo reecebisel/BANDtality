@@ -27,18 +27,18 @@ class AlbumsController < ApplicationController
     @photo = Photo.new
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @album.update(album_params)
-      flash[:success]= "Update successful!"
-      redirect_to profile_path(@album.profile_id)
-    else
-      flash[:error]= "Something went wrong."
-      render :edit
-    end
-  end
+  # def update
+  #   if @album.update(album_params)
+  #     flash[:success]= "Update successful!"
+  #     redirect_to profile_path(@album.profile_id)
+  #   else
+  #     flash[:error]= "Something went wrong."
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     if @album.destroy

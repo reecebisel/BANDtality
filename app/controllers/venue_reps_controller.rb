@@ -37,18 +37,18 @@ class VenueRepsController < ApplicationController
 		end
 	end
 
-  def edit
-  end
+ #  def edit
+ #  end
 
-	def update
-		if @venue_rep.update(venue_rep_params)
-			flash[:notice] = "Venue Representative Updated!"
-			redirect_to venue_rep_path(VenueRep.id)
-		else
-			flash[:alert] = "Something went wrong. Please try again."
-			render :edit
-		end
-	end
+	# def update
+	# 	if @venue_rep.update(venue_rep_params)
+	# 		flash[:notice] = "Venue Representative Updated!"
+	# 		redirect_to venue_rep_path(VenueRep.id)
+	# 	else
+	# 		flash[:alert] = "Something went wrong. Please try again."
+	# 		render :edit
+	# 	end
+	# end
 
 	def destroy
 		@venue_rep.destroy

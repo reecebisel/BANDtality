@@ -41,13 +41,13 @@ let(:user) {User.create(email: 'test@gmail.com', password: 'password')}
     end
   end
 
-  describe "GET #edit" do
-    it "edits venue rep successfully" do
-    sign_in(user)
-      get :edit, id: venue_rep.id
-      expect(response).to have_http_status(:success)
-    end
-  end
+  # describe "GET #edit" do
+  #   it "edits venue rep successfully" do
+  #   sign_in(user)
+  #     get :edit, id: venue_rep.id
+  #     expect(response).to have_http_status(:success)
+  #   end
+  # end
 
   # describe "PUT #update" do
   #   it "updates venue rep successfully" do

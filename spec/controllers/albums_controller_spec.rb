@@ -37,23 +37,27 @@ let(:album) {Album.create(album_name: 'Sweet Riffs')}
     # end
   end
 
-  describe "GET #edit" do
-    it "returns http success" do
-      get :edit, id: album.id
+  # describe "GET #edit" do
+  #   it "returns http success" do
+  #     get :edit, id: album.id
+  #     expect(response).to have_http_status(:redirect)
+  #   end
+  # end
+
+  # describe "PUT #update" do
+  #   it "updates album successfully" do
+  #     put :update, id: album.id, album: {album_name: 'Test Album'}
+  #     new_album = 'Test Album'
+  #     updated_album = album.reload
+  #     expect(updated_album.album_name).to eq(new_album)
+  #     expect(response).to have_http_status(:redirect)
+  #   end
+  # end
+
+  describe "DELETE #destroy" do
+    it "deletes album successfully" do
+      delete :destroy, id: album.id
       expect(response).to have_http_status(:redirect)
     end
   end
-
-  def update
-    if @album.update(album_params)
-      flash[:notice] = "Album updated!"
-      redirect_to album_path(@album.id)
-    else
-      flash[:alert] = "Something went wrong. Please try again."
-      render :edit
-    end
-  end
-
-
-
 end

@@ -23,18 +23,18 @@ class PlaylistsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @playlist.update(playlist_params)
-      flash[:success]= "Playlist edited!"
-      redirect_to profile_path(@playlist.profile_id)
-    else
-      flash[:error]= "Playlist failed to update"
-      render :edit
-    end
-  end
+  # def update
+  #   if @playlist.update(playlist_params)
+  #     flash[:success]= "Playlist edited!"
+  #     redirect_to profile_path(@playlist.profile_id)
+  #   else
+  #     flash[:error]= "Playlist failed to update"
+  #     render :edit
+  #   end
+  # end
 
   def show
   end

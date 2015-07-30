@@ -37,18 +37,18 @@ class MusiciansController < ApplicationController
 		end
 	end
 
-  def edit
-  end
+ #  def edit
+ #  end
 
-	def update
-		if @musician.update(musician_params)
-			flash[:notice] = "Musician updated!"
-			redirect_to musicians_path
-		else
-			flash[:alert] = "Something went wrong. Please try again."
-			render :edit
-		end
-	end
+	# def update
+	# 	if @musician.update(musician_params)
+	# 		flash[:notice] = "Musician updated!"
+	# 		redirect_to musicians_path
+	# 	else
+	# 		flash[:alert] = "Something went wrong. Please try again."
+	# 		render :edit
+	# 	end
+	# end
 
 	def destroy
 		@musician.destroy

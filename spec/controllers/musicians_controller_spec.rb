@@ -26,11 +26,6 @@ RSpec.describe MusiciansController, type: :controller do
       post :create, musician: {instrument: 'banjo'}
       expect(response).to have_http_status(:redirect)
     end
-    # it 'fails to create new musician' do
-    #   post :create, musician:{instrument: nil}
-    #   expect(flash[:error]).to be_present
-    #   expect(response).to render_template(:new)
-    # end
   end
 
   describe "GET #new" do 

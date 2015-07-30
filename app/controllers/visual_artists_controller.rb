@@ -36,18 +36,18 @@ class VisualArtistsController < ApplicationController
 		end
 	end
 
-  def edit
-  end
+ #  def edit
+ #  end
 
-	def update
-		if @visual_artist.update(visual_artist_params)
-			flash[:notice] = "Visual Artist updated"
-			redirect_to visual_artists_path
-		else
-			flash[:error] = "Something went wrong. Please try again."
-			render :edit	
-		end
-	end
+	# def update
+	# 	if @visual_artist.update(visual_artist_params)
+	# 		flash[:notice] = "Visual Artist updated"
+	# 		redirect_to visual_artists_path
+	# 	else
+	# 		flash[:error] = "Something went wrong. Please try again."
+	# 		render :edit	
+	# 	end
+	# end
 
 	def destroy
 		@visual_artist.destroy
