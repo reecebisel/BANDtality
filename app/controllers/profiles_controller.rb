@@ -2,7 +2,6 @@ class ProfilesController < ApplicationController
 	layout 'logged_in', except: [:new, :create]
 	before_action :authenticate_user!, except: [:index]
 	before_action :find_profile, only: [:edit, :update, :show, :destroy]
-	validates_uniqueness_of :name, :case_sensitive => false
 
   def index
 		@search_profiles = Profile.search(params[:search])
