@@ -23,7 +23,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @photos = Photo.where(:album_id == @album.id)
+    @photos = Photo.where(:album_id == @album.id && :user_id == current_user.id) 
+    # @photos = Photo.where(:user_id == current_user.id)
     @photo = Photo.new
   end
 
