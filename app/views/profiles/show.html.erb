@@ -31,12 +31,16 @@
                 <% end %>
                 <% if current_user.profile.id == @profile.id %>
                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Content</button>
+                <%= link_to("Edit", edit_profile_path(current_user.profile.id), class: "pull-right fa fa-edit")%>
                 <% end %>
 							</div>
 						</div> 
           </section>
           <section class="panel">
-              <div class="panel-heading">Photo Albums</div>
+              <div class="panel-heading">
+                Photo Albums                
+                <button type="button" class="pull-right fa fa-plus" data-toggle="modal" data-target="#myModal"></button>
+              </div>
               <div class="panel-body profile-content" id="albums">
             	  <div class= "profile-content" id="albums"> 
                   <!-- div appending photo albums -->  
@@ -49,7 +53,7 @@
                         <h4>
                           <b><%= link_to " #{album.album_name}", album_path(album.id), class: "fa fa-folder-o" %></b>
                           <% if current_user.profile.id == @profile.id %>
-                            <p id="album_delete"><%= link_to 'Delete', album_path(album.id), method: :delete, class: "pull-right" %></p>
+                            <p id="album_delete"><%= link_to '', album_path(album.id), method: :delete, class: "fa fa-trash pull-right" %></p>
                           <% end %>
                         </h4>
                       </li>
