@@ -11,6 +11,8 @@ class Search < ActiveRecord::Base
 
 		# finding venue rep
 		profile = Profile.joins(:venue_rep).where(:venue_rep => { :venue_name => "#{venue}"}) if venue.present?
+
+		
 		return profile
 	end
 end 
