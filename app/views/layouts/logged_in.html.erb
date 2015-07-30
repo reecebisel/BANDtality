@@ -35,25 +35,21 @@
                 </div>
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
-                    <li class="dropdown">
+<!--                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                         <ul class="dropdown-menu alert-dropdown">
                             <li>
                                 <a href="#">New Messages<span class="label label-warning">Alert Badge</span></a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= current_user.profile.name %><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li class="fa fa-cog">Account Settings</li>
                             <li class="divider"></li>
                             <li>
-                                <%= link_to "Edit Profile", edit_profile_path(current_user.profile.id), class: "fa fa-fw fa-user" %>
-                            </li>
-
-                            <li>
-                                <%= link_to 'Delete Profile', user_registration_path, :confirm => 'Are you sure you want to destroy your account? Note: This will also get rid of all your photos and playlists.', :method => :delete, class: "fa fa-fw fa-trash-o" %>
+                                <%= link_to "Settings", edit_profile_path(current_user.profile.id), class: "fa fa-fw fa-cog" %>
                             </li>
                             <li class="divider"></li>
                             <li>
