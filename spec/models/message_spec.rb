@@ -18,14 +18,17 @@ RSpec.describe Message, type: :model do
 
       # not totally sure that i need to check for the failure
       it "fails to find profile messages" do 
-        
         expect(Message.all.my_messages(@profile1.id)).to_not eq([@message1, @message4])
       end
     end
 
     describe "sent_messages" do
       it "finds profile's sent messages" do
-        expect(Message.all.sent_messages(@profile.id)).to eq([@message2, @message3])
+        expect(Message.all.sent_messages(@profile1.id)).to eq([@message1, @message4])
+      end
+
+      it "doesn't find another user's messages" do
+        expect(Message.all.sent_messages(@profile2.id)).to_not eq([@message1, @message4])
       end
     end
   end # Class Methods context endtag
