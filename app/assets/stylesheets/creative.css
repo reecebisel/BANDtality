@@ -69,9 +69,6 @@ a:focus {
     color: #eb3812;
 }
 
-h1 {
-    font-family: 'Fjalla One', sans-serif;
-}
 
 
 h2,
@@ -79,11 +76,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Cantarell', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 p {
-    font-family: 'Cantarell', sans-serif;
+    font-family: 'Lato', sans-serif;
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.5;
