@@ -90,9 +90,7 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-search bigger wow bounceIn text-primary"></i>
                         <h3>Find & Request</h3>
-                        <p class="text-mu
-
-                        ted">Looking for a musician to play for a show, a venue in which to perform, or a visual artist to design and produce merchandise? Search for the right people in the right place.</p>
+                        <p class="text-muted">Looking for a musician to play for a show, a venue in which to perform, or a visual artist to design and produce merchandise? Search for the right people in the right place.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
@@ -154,7 +152,7 @@
                         <div class="call-to-action">
                             <br/><br/><br/>
                             <h2>Sign Up Now to Get Your BANDtality Up!</h2>
-                            <a href="new_registration_path" class="btn btn-primary btn-xl wow tada">Sign Up!</a>
+                            <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
                         </div>
                     </div>
                 </div>
@@ -176,7 +174,7 @@
                             <div class="row">
                                 <div class="col-xs-8-offset-2 col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                        <img src="..." alt="...">
+                                        <%= image_tag "tiffany.png" %>
                                         <div class="caption">
                                             <h3>Tiffany Forsyth</h3>
                                             <p>...</p>
@@ -185,7 +183,7 @@
                                 </div>
                                 <div class="col-xs-8-offset-2 col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                        <img src="..." alt="...">
+                                        <%= image_tag "reece.png", class: "dev-picture" %>
                                         <div class="caption">
                                             <h3>Reece Bisel</h3>
                                             <p>AKA: <strong>The Incredible Height.</strong> A small town boy now turned web dev.</p>
@@ -208,14 +206,19 @@
                             </div>
                             <%#= link_to "Our Story", founders_path, class: "btn btn-md", id: "founder-story-button" %>
                 </div>
-
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-github-square fa-3x wow bounceIn"></i>
-                    <p><%= link_to "Github", src= "https://github.com/reecebisel/BANDtality", target: "_blank" %></p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:bandtality@gmail.com" target="_blank">BANDtality@gmail.com</a></p>
+                <div class="row col-xs-12 text-center" id="icon-row">
+                    <div class="col-xs-3 text-center">
+                        <i class="fa fa-github-square fa-3x wow bounceIn"></i>
+                        <p><%= link_to "Github", src= "https://github.com/reecebisel/BANDtality", target: "_blank" %></p>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <i class="fa fa-flask fa-3x wow bounceIn"></i>
+                        <p><%= link_to "DevPoint Labs", src= "http://www.devpointlabs.com/", target: "_blank" %></p>
+                    </div>
+                    <div class="col-xs-3 text-center">
+                        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                        <p><a href="mailto:bandtality@gmail.com" target="_blank">BANDtality@gmail.com</a></p>
+                    </div>
                 </div>
             </div>
         </div>

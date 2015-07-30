@@ -205,6 +205,8 @@ header {
     -o-background-size: cover;
 }
 
+
+
 header .header-content {
     position: relative;
     width: 100%;
@@ -516,3 +518,4 @@ body {
   background-color: #10152e;
     color: #fff; 
 }
+
