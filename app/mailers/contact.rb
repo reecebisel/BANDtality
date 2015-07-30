@@ -1,3 +1,4 @@
+
 class Contact < ApplicationMailer
 
 	# default :from => 'bandtality@gmail.com'
@@ -36,5 +37,4 @@ end
 
 # in logic put: Contact.send_contact_info_html.deliver
 # Contact.email_with_args_and_instance_vars('Jake, 'Sorce').deliver
-
 

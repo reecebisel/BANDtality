@@ -24,7 +24,6 @@ let(:user) {User.create(email: 'test@gmail.com', password: 'password')}
 
   describe "POST #create" do
     it "creates a new visual artist successfully" do
-    sign_in(user)
       post :create, visual_artist: {medium: 'Feathers'}
       expect(response).to have_http_status(:redirect)
     end
