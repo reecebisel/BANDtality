@@ -1,40 +1,35 @@
 <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,700' rel='stylesheet' type='text/css'>
 
-<section class="events_background">
-	<section class="container">
+<div class="events_background">
+	<div class="container">
 		<div class="wrapper">
+			<section class="panel">
+				<div class="panel-heading">
+					New Event
+				</div>
+			<div class="panel-body">
+				<%= form_for @event, html: {multipart: true} do |f| %>
+					<h4>Image:</h4>
+					<p><%= f.file_field(:image)%></p>
+					<p><%= f.text_field(:event_name, class: "form-control", placeholder: "Event name")%></p>
 
-			<h1 class="silver_text">New Event</h1>
+					<p><%= f.date_select(:event_date)%></p>
 
-			<%= form_for @event, html: {multipart: true} do |f| %>
-				<h4 class="silver_text">Image:</h4>
-				<p class="grey_text"><%= f.file_field(:image)%></p>
-				<br/>
-				<h4 class="silver_text">Event:</h4>
-				<p class="grey_text"><%= f.text_field(:event_name)%></p>
-				<br/>
-				<h4 class="silver_text">Date:</h4>
-				<p class="grey_text"><%= f.date_select(:event_date)%></p>
-				<br/>
-				<h4 class="silver_text">Time:</h4>
-				<p class="grey_text"><%= f.text_field(:start_time)%></p>
-				</br>
-				<h4 class="silver_text">Venue:</h4>
-				<p class="grey_text"><%= f.text_field(:event_venue)%></p>
-				</br>
-				<h4 class="silver_text">Address:</h4>
-				<p class="grey_text"><%= f.text_field(:event_address)%></p>
-				</br>
-				<h4 class="silver_text">Tickets:</h4>
-				<p class="grey_text"><%= f.text_field(:tickets)%></p>
-				</br>
-				<h4 class="silver_text">Description:</h4>
-				<p class="grey_text"><%= f.text_area(:event_desc)%></p>
-				<br/>
+					<p><%= f.text_field(:start_time, class: "form-control", placeholder: "Time (ex. 5:30pm)")%></p>
 
-				<a><%= f.submit("Submit")%></a>
-			<%end%>
+					<p><%= f.text_field(:event_venue, class: "form-control", placeholder: "Venue")%></p>
+
+					<p><%= f.text_field(:event_address, class: "form-control", placeholder: "Address")%></p>
+
+					<p><%= f.text_field(:tickets, class: "form-control", placeholder: "Tickets")%></p>
+				
+					<p><%= f.text_area(:event_desc, class: "form-control", placeholder: "Description")%></p>
+					
+
+					<a><%= f.submit("Submit", class: "btn btn-primary")%></a>
+				<%end%>
+			</div>
 		</div>
-
 	</section>
-</section>
+	</div>
+</div>
