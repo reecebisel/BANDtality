@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-before_action :find_photo, only: [:edit, :update, :show, :destroy]
+  before_action :find_photo, only: [:edit, :update, :show, :destroy]
 
   def index
     @photos = Photo.all

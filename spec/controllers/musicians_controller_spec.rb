@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe MusiciansController, type: :controller do
-  include Devise::TestHelpers
 
   let(:musician) {Musician.create(instrument: 'Harmonica')}
   let(:user) {User.create(email: 'test@gmail.com', password: 'password')}

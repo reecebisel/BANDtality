@@ -13,6 +13,9 @@
       <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Wire+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,700' rel='stylesheet' type='text/css'>
+
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="/assets/animate.min.css" type="text/css">
 
@@ -57,9 +60,12 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Find The Resources You Need for Your Band's Vitality.</h1>
+              <!--  <a id="bandtality" class="permanent_marker black_text">Band<a><a id="bandtality2" class="wire_one black_text">tality</a>  -->
+                <a id="main_title" class="black_text">BANDtality</a><br>
+                <h2 id="slogan">Local Band Resource Network</h2>
                 <hr>
-                <p>Connect with musicians, venues, or visual artists for your show.</p>
+                
+                <h2 class="white_text">Click here to get started!</h2><br>
                 <%= link_to("Login", new_user_session_path, class: "btn btn-default btn-xl page-scroll")%>
                 <%= link_to("Sign Up", new_user_registration_path, class: "btn btn-primary btn-xl page-scroll")%>
             </div>
@@ -72,6 +78,9 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Support for Local Musicans and Artists</h2>
                     <hr>
+                    <h3 class="white_text">Looking for a new bandmate?<br>
+                        Need an artist to design your merch?<br>
+                        Want to play more shows?</h3><br>
                     <p class="text-faded"> BANDtality is dedicated to connecting local musicians with the venues and artists they need to effectively promote their work.</p>
                     <!-- <a href="#" class="btn btn-default btn-xl">Get Started!</a> -->
                 </div>
@@ -99,7 +108,7 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart-o bigger wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>Musician 'Dating'</h3>
-                        <p class="text-muted">An inspired service for individual musicians seeking bands, or bands that are seeking members. Find your musical soul mate now, beacause band love is hard!</p>
+                        <p class="text-muted">An online-dating inspired service for musicians seeking bands, or bands that are seeking members. Find your musical soul mate now, because band love is hard!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
@@ -179,7 +188,10 @@
                                         <img src="..." alt="...">
                                         <div class="caption">
                                             <h3>Tiffany Forsyth</h3>
-                                            <p>...</p>
+                                            <p>AKA: <strong>The Immortal.</strong> Former business exec and barmaid now turned web dev.</p>
+                                            <p>
+                                            <a href=https://www.linkedin.com/in/tiffanyforsyth><i class="fa fa-linkedin-square"></i></a>
+                                            <a href="https://github.com/isserley"><i class="fa fa-github-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
