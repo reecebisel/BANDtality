@@ -2,45 +2,41 @@
   <div class ="page-wrapper">
     <div>
       <div>
-        
-        <div class="col-md-4">
-          <div class="panel" >
+        <div class=".col-md-8">
+          <section class="panel" >
+            <div class="panel-heading">
+              "<%=@album.album_name%>" by <%= find_parent_profile(@album.profile_id).name %>
+            </div>
             <div class="panel-body">
+            <% if @album.profile_id == current_user.profile.id %>
               <div>
-                <%= image_tag find_parent_profile(@album.profile_id).image.url(:medium), class: "img-responsive" %>
-                <h1><%= find_parent_profile(@album.profile_id).name %></h1>
-                <p> <%= find_parent_profile(@album.profile_id).bio %></p>
-                  <% if current_user.profile.id != find_parent_profile(@album.profile_id).id %>
-                <%= link_to("Message", new_message_path(message_receiver_id: find_parent_profile(@album.profile_id).id), class: "btn btn-primary btn-large")%>
-                <% end %>
                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Photo</button>
               </div>
-            </div> 
-          </div>
-        </div>
-        <div class="col-md-7" id="content">
-          <div class= "profile-content" id="playlists">
-          <div class="row">
-            <% if @album.photos.present? %>
-            <div>
-                <% @photos.each do |photo| %>
-                <div class="thumbnail col-xs-6">
-                  <%= image_tag photo.image.url(:medium), class: "img-responsive col-xs-8-offset-2" %>
-                  <%# raise "" %>
-                  <% if current_user.id == photo.user_id %>
-                  <%= link_to 'Delete', photo_path(photo.id), method: :delete, class: 'fa fa-fw fa-ban' %>
+            <%end%>
+            <br>
+            <div id="content">
+              <div class= "profile-content" id="playlists">
+                <div class="row">
+                  <% if @album.photos.present? %>
+                  <div>
+                      <% @album_photos.each do |photo| %>
+                      <div class="col-xs-4">
+                        <%= image_tag photo.image.url(:medium), class: "img-responsive col-xs-8-offset-2" %>
+                        <%# raise "" %>
+                        <% if current_user.id == photo.user_id %>
+                        <%= link_to 'Delete', photo_path(photo.id), method: :delete, class: 'fa fa-fw fa-ban' %>
+                        <% end %>
+                      </div>
+                      <% end %>
+                  </div>
+                  <% else %>
+                    <div></div>
                   <% end %>
                 </div>
-                <% end %>
             </div>
-            <% else %>
-              <div></div>
-            <% end %>
           </div>
+        </section> 
       </div>
-    </div>
-  </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

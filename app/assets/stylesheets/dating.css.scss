@@ -1,3 +1,21 @@
 #all-profiles-button {
   text-align: right;
 }
+
+#center {
+  text-align: center;
+}
+#dating-background{
+
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  /*Background Image from unsplash.com, by Julia Caesar*/
+	background-image: url(/assets/dating.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+}

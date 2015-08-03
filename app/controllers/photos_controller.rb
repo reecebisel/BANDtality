@@ -11,18 +11,18 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
 
-  # def create
-  #   @photo = Photo.new(photo_params)
-  #   @photo.album_id = params[:photo][:album_id]
-  #   @photo.user_id = current_user.id
-  #   if @photo.save
-  #     flash[:success]= "Photo created!"
-  #     redirect_to album_path(@photo.album_id)
-  #   else
-  #     flash[:error]= "Photo failed to create!"
-  #     render :new
-  #   end
-  # end
+  def create
+    @photo = Photo.new(photo_params)
+    @photo.album_id = params[:photo][:album_id]
+    @photo.user_id = current_user.id
+    if @photo.save
+      flash[:success]= "Photo created!"
+      redirect_to album_path(@photo.album_id)
+    else
+      flash[:error]= "Photo failed to create!"
+      render :new
+    end
+  end
 
   # def edit
   # end

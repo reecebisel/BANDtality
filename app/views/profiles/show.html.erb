@@ -4,7 +4,10 @@
   		<div>
 				
 				<div class="col-md-4">
-          <div class="panel box">
+          <section class="panel">
+            <div class="panel-heading">
+              Profile
+            </div>
          		<div class="panel-body">
               <div>
             		<div class="img-responsive">
@@ -28,28 +31,37 @@
                 <% end %>
                 <% if current_user.profile.id == @profile.id %>
                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Add Content</button>
+                <%= link_to("Edit", edit_profile_path(current_user.profile.id), class: "pull-right fa fa-edit")%>
                 <% end %>
 							</div>
 						</div> 
-          </div>
-      	  <div class= "profile-content" id="albums"> 
-            <!-- div appening photo albums -->  
-            <ul id= "albums_list"><h3 class="text-center">Photo Albums</h3>
-              <hr />
-              <% @albums.each do |album| %>
-                <li>
-                  <div class= "row">
-                    <h4>
-                      <%= link_to album.album_name, album_path(album.id) %>
-                      <% if current_user.profile.id == @profile.id %>
-                        <p id="album_delete"><%= link_to 'Delete', album_path(album.id), method: :delete, class: "pull-right" %></p>
-                      <% end %>
-                    </h4>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+          </section>
+          <section class="panel">
+              <div class="panel-heading">
+                Photo Albums                
+                <button type="button" class="pull-right fa fa-plus" data-toggle="modal" data-target="#myModal"></button>
+              </div>
+              <div class="panel-body profile-content" id="albums">
+            	  <div class= "profile-content" id="albums"> 
+                  <!-- div appending photo albums -->  
+                  <ul id= "albums_list">
+                    <% if @albums.empty? %>
+                      Add a photo album! 
+                    <%end%>
+                    <% @albums.each do |album| %>
+                      <li>
+                        <h4>
+                          <b><%= link_to " #{album.album_name}", album_path(album.id), class: "fa fa-folder-o" %></b>
+                          <% if current_user.profile.id == @profile.id %>
+                            <p id="album_delete"><%= link_to '', album_path(album.id), method: :delete, class: "fa fa-trash pull-right" %></p>
+                          <% end %>
+                        </h4>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+          </section>
         </div>
     		<div class="col-md-7" id="content">
           <div class= "profile-content" id="playlists"> 
