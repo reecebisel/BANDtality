@@ -21,9 +21,11 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter', '~> 1.2.0'
 gem 'will_paginate', '~> 3.0.6'
 gem "ckeditor"
-gem 'puma', '~> 2.12.2'
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'puma', '~> 2.12.2'
+end
 
 group :development, :production do
   gem 'sendgrid'
